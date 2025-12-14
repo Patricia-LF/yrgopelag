@@ -9,7 +9,7 @@ const slides = [{
                 subtitle: 'Infinity pool overlooking turquoise waters'
             },
             {
-                image: 'images/Gemini_Generated_Image_chpf31chpf31chpf(1).png',
+                image: 'images/Gemini_Generated_Image_s518nrs518nrs518(2).png',
                 title: 'Zen Retreat',
                 subtitle: 'Minimalist design with breathtaking ocean views'
             },

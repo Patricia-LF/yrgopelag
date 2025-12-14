@@ -17,7 +17,7 @@
 
     <header>
         <h1>Infinity Hotel</h1>
-        <img src="images/Logga.png" alt="Infinity logo">
+        <img src="images/infinity-logo.png" alt="Infinity logo">
     </header>
 
 </body>
