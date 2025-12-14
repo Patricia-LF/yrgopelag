@@ -28,10 +28,12 @@ body {
     inset: 0;
     opacity: 0;
     transition: opacity 0.8s ease-in-out;
+    pointer-events: none;
 }
 
 .slide.active {
     opacity: 1;
+    pointer-events: auto;
 }
 
 .slide-image {
@@ -80,12 +82,14 @@ body {
 }
 
 .cta-button {
-    background: white;
+    background: rgba(255, 255, 255, 0.9);
     color: black;
     padding: 0.75rem 2rem;
     border: none;
     border-radius: 9999px;
     font-size: 1rem;
+    text-decoration: none;
+    display: inline-block; /* ⭐ Lägg till denna för att a-taggen ska bete sig som en knapp */
     cursor: pointer;
     transition: background 0.3s;
     opacity: 0;
@@ -94,8 +98,7 @@ body {
 }
 
 .cta-button:hover {
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 30px var(--buttons);
+    box-shadow: 0px 0px 20px var(--buttons);
 }
 
 .nav-button {
@@ -204,58 +207,158 @@ body {
 }
 
 .booking-dates {
-    /* height: 60px; */
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    width: 60%;
+    padding: 10px;
+    background: var(--box-color);
+    border-radius: 25px;
+    margin: 20px;
+    justify-self: center;
 }
 
 .booking-dates p {
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
 }
 
-.check-in-date {
+.booking-dates img {
+    height: 50px;
+    width: 150px;
+    display: flex;
+    align-self: center;
+    aspect-ratio: 1/1;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.check-in-date, .check-out-date {
     display: flex;
     gap: 10px;
     align-items: center;
     cursor: pointer;
 }
 
-.check-in-date p {
+.check-in-date p, .check-out-date p {
     font-size: 1rem;
+    font-weight: 300;
 }
 
-.check-in-date img {
+.check-in-date img, .check-out-date img {
     height: 20px;
     width: 20px;
     padding: 0px;
     border-radius: 0;
 }
 
-.check-in-date img:hover {
-    transform: scale(1.01);
+.check-in-date img:hover, .check-out-date img:hover {
+    box-shadow: 0px 0px 10px var(--buttons);
+    transform: scale(1.1);
 }
 
-article {
+.room-container {
     background: var(--box-color);
     border-radius: 25px;
     width: 80%;
     display: flex;
     margin: 20px;
     justify-self: center;
+    padding: 20px;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-article img {
+.room-container img {
     aspect-ratio: 1/1;
     width: 300px;
-    padding: 20px;
     border-radius: 25px;
 }
 
-article p {
+.room-info {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+}
+
+.room-type {
     padding-top: 20px;
     font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.room-descripiton {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.room-prize {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #29343D solid;
+    border-radius: 25px;
+    aspect-ratio: 1 / 1;
+    height: 300px;
+    justify-content: center;
+}
+
+.calendar-container h2 {
+    color: #29343D;
+    font-size: 1.5rem;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  max-width: 280px;
+  margin: 1rem auto;
+  font-family: system-ui, sans-serif;
+}
+
+.day {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+  color: #29343D;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1.2rem;
+  transition: background 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.day:hover {
+  background: #eaeaea;
+  transform: scale(1.05);
+}
+
+/* Weekends */
+.weekend {
+  background: #fbe9e7;
+  color: #b71c1c;
+  font-weight: 500;
+}
+
+/* Booked dates */
+.booked {
+  background: #bd9321;
+  border-color: #7b4002;
+  color: #b26229;
+  font-weight: 600;
+}
+
+.booked:hover {
+    background: #d6caa5;
 }
 
 footer {

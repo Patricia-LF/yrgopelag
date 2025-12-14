@@ -27,13 +27,18 @@ require __DIR__ . '/header.php';
         </div>
     </div>
 
-    <div>
-        <p>Check-out date:</p>
+    <img src="images/Arrow 1.png">
 
+    <div class="check-out-container">
+        <p>Check-out date:</p>
+        <div class="check-out-date">
+            <p>Monday, jan 10</p>
+            <img src="images/calendar-icon.png">
+        </div>
     </div>
 </article>
 
-<article>
+<article class="room-container">
     <div>
         <img src="images/Gemini_Generated_Image_chpf31chpf31chpf(1).png">
     </div>
@@ -42,9 +47,19 @@ require __DIR__ . '/header.php';
         <p>Economy</p>
         <p>2c/night</p>
     </div>
+    <div class="calendar-container">
+        <h2>January 2026</h2>
+        <section class="calendar">
+            <?php
+            for ($i = 1; $i <= 31; $i++) :
+            ?>
+                <div class="day"><?= $i; ?></div>
+            <?php endfor; ?>
+        </section>
+    </div>
 </article>
 
-<article>
+<article class="room-container">
     <div>
         <img src="images/Gemini_Generated_Image_chpf31chpf31chpf(1).png">
     </div>
@@ -53,16 +68,37 @@ require __DIR__ . '/header.php';
         <p>Standard</p>
         <p>5c/night</p>
     </div>
+    <div class="calendar-container">
+        <h2>January 2026</h2>
+        <section class="calendar">
+            <?php
+            for ($i = 1; $i <= 31; $i++) :
+            ?>
+                <div class="day"><?= $i; ?></div>
+            <?php endfor; ?>
+        </section>
+    </div>
 </article>
 
-<article>
+<article class="room-container">
     <div>
         <img src="images/Gemini_Generated_Image_chpf31chpf31chpf(1).png">
     </div>
 
-    <div>
-        <p>Luxury</p>
-        <p>7c/night</p>
+    <div class="room-info">
+        <p class="room-type">Luxury</p>
+        <p class="room-descripiton">Our Luxury suite includes a king size bed, a private pool and free access to all features in the economy tier </p>
+        <p class="room-prize">7c/night</p>
+    </div>
+    <div class="calendar-container">
+        <h2>January 2026</h2>
+        <section class="calendar">
+            <?php
+            for ($i = 1; $i <= 31; $i++) :
+            ?>
+                <div class="day"><?= $i; ?></div>
+            <?php endfor; ?>
+        </section>
     </div>
 </article>
 

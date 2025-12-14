@@ -56,7 +56,7 @@ const slides = [{
                             <div class="content-wrapper">
                                 <h1 class="slide-title">${slide.title}</h1>
                                 <p class="slide-subtitle">${slide.subtitle}</p>
-                                <button class="cta-button">Book Your Stay</button>
+                                <a href="booking-page.php" class="cta-button">Book Your Stay</a>
                             </div>
                         </div>
                     </div>
