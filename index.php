@@ -8,6 +8,10 @@ require __DIR__ . '/header.php';
     <!-- Slides kommer att genereras av JavaScript -->
 </div>
 
+<article class="about-container">
+    <p>Infinity hotel is located on the beautiful Pixel Island. </p>
+</article>
+
 <section class="features-container">
     <p>Features:</p>
     <ul>
@@ -22,8 +26,7 @@ require __DIR__ . '/header.php';
     <div class="check-in-container">
         <p>Check-in date:</p>
         <div class="check-in-date">
-            <p>Monday, jan 3</p>
-            <img src="images/calendar-icon.png">
+            <input type="date" name="check-in" class="check-in" min="2026-01-01" max="2026-01-31">
         </div>
     </div>
 

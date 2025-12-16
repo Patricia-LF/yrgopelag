@@ -186,6 +186,13 @@ body {
     }
 }
 
+.about-container {
+    background-color: var(--box-color);
+    color: var(--background-color);
+    font-family: var(--font-base);
+    padding: 20px;
+}
+
 .features-container {
     background-color: var(--box-color);
     color: var(--background-color);
@@ -235,11 +242,13 @@ body {
     border-radius: 25px;
 }
 
-.check-in-date, .check-out-date {
+.check-in, .check-out-date {
     display: flex;
     gap: 10px;
     align-items: center;
     cursor: pointer;
+    border: none;
+    background: var(--box-color);
 }
 
 .check-in-date p, .check-out-date p {
