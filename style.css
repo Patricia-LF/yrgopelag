@@ -1,0 +1,387 @@
+:root {
+    --background-color: #29343D;
+    --box-color: #E7E4E0;
+    --buttons: #B99235;
+    --font-base: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    overflow-x: hidden;
+    background-color: var(--background-color);
+}
+
+.carousel-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    pointer-events: none;
+}
+
+.slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.slide-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.slide-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+}
+
+.content-wrapper {
+    max-width: 56rem;
+    margin: 0 auto;
+}
+
+.slide-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+}
+
+.slide-subtitle {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.cta-button {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1rem;
+    text-decoration: none;
+    display: inline-block; /* ⭐ Lägg till denna för att a-taggen ska bete sig som en knapp */
+    cursor: pointer;
+    transition: background 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+}
+
+.cta-button:hover {
+    box-shadow: 0px 0px 20px var(--buttons);
+    transform: scale(1.1);
+}
+
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.nav-button.prev {
+    left: 1rem;
+}
+
+.nav-button.next {
+    right: 1rem;
+}
+
+.nav-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+}
+
+.dot-indicators {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background: white;
+    transform: scale(1.25);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (min-width: 768px) {
+    .slide-title {
+        font-size: 4.5rem;
+    }
+
+    .slide-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .nav-button.prev {
+        left: 2rem;
+    }
+
+    .nav-button.next {
+        right: 2rem;
+    }
+}
+
+.about-container {
+    background-color: var(--box-color);
+    color: var(--background-color);
+    font-family: var(--font-base);
+    padding: 20px;
+}
+
+.features-container {
+    background-color: var(--box-color);
+    color: var(--background-color);
+    font-family: var(--font-base);
+    border-radius: 25px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 20px 40px;
+    margin: 40px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.features-container p {
+    color: var(--background-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.booking-dates {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    padding: 10px;
+    background: var(--box-color);
+    border-radius: 25px;
+    margin: 20px;
+    justify-self: center;
+}
+
+.booking-dates p {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+}
+
+.booking-dates img {
+    height: 50px;
+    width: 150px;
+    display: flex;
+    align-self: center;
+    aspect-ratio: 1/1;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.check-in, .check-out-date {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background: var(--box-color);
+}
+
+.check-in-date p, .check-out-date p {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+.check-in-date img, .check-out-date img {
+    height: 20px;
+    width: 20px;
+    padding: 0px;
+    border-radius: 0;
+}
+
+.check-in-date img:hover, .check-out-date img:hover {
+    box-shadow: 0px 0px 10px var(--buttons);
+    transform: scale(1.1);
+}
+
+.room-container {
+    background: var(--box-color);
+    border-radius: 25px;
+    width: 80%;
+    display: flex;
+    margin: 20px;
+    justify-self: center;
+    padding: 20px;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.room-container img {
+    aspect-ratio: 1/1;
+    width: 300px;
+    border-radius: 25px;
+}
+
+.room-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.room-type {
+    padding-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.room-descripiton {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.room-prize {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: #29343D solid;
+    border-radius: 25px;
+    aspect-ratio: 1 / 1;
+    height: 300px;
+    justify-content: center;
+}
+
+.calendar-container h2 {
+    color: #29343D;
+    font-size: 1.5rem;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  max-width: 280px;
+  margin: 1rem auto;
+  font-family: system-ui, sans-serif;
+}
+
+.day {
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f4f4;
+  color: #29343D;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  font-size: 1.2rem;
+  transition: background 0.2s, transform 0.1s;
+  cursor: pointer;
+}
+
+.day:hover {
+  background: #eaeaea;
+  transform: scale(1.05);
+}
+
+/* Weekends */
+.weekend {
+  background: #fbe9e7;
+  color: #b71c1c;
+  font-weight: 500;
+}
+
+/* Booked dates */
+.booked {
+  background: #bd9321;
+  border-color: #7b4002;
+  color: #b26229;
+  font-weight: 600;
+}
+
+.booked:hover {
+    background: #d6caa5;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #171B1E;
+    height: 200px;
+    gap: 10px;
+}
+
+footer p {
+    font-family: var(--font-base);
+    color: var(--box-color);
+}
