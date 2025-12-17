@@ -9,7 +9,7 @@ require __DIR__ . '/header.php';
 </div>
 
 <article class="about-container">
-    <p>Infinity hotel is located on the beautiful Pixel Island. </p>
+    <p>Infinity hotel is located on the beautiful Isla Syntax. </p>
 </article>
 
 <section class="features-container">
@@ -91,7 +91,7 @@ require __DIR__ . '/header.php';
     <div class="room-info">
         <p class="room-type">Luxury</p>
         <p class="room-descripiton">Our Luxury suite includes a king size bed, a private pool and free access to all features in the economy tier </p>
-        <p class="room-prize">7c/night</p>
+        <p class="room-price">7c/night</p>
     </div>
     <div class="calendar-container">
         <h2>January 2026</h2>
@@ -109,4 +109,4 @@ require __DIR__ . '/header.php';
 require __DIR__ . '/footer.php';
 ?>
 
-<script src="script.js"></script>
+<script src="carousel.js"></script>

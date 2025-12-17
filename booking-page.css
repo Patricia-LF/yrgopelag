@@ -79,12 +79,29 @@ input {
     margin: 0;
 }
 
+ /* .feature {
+        display: block;
+        padding: 8px;
+        margin: 5px 0;
+        background: white;
+        border-radius: 4px;
+    } */
+
+    .feature:hover {
+        background: #e8f4f8;
+    }
+
+    /* .price {
+        color: #0066cc;
+        font-weight: bold;
+    } */
+
 .f {
     width: 40px;
     cursor: pointer;
 }
 
-.prize-total {
+.price-total {
     font-size: 1.5rem;
     font-weight: 500;
     font-family: var(--font-base);
@@ -136,3 +153,39 @@ input {
     box-shadow: 0px 0px 20px var(--buttons);
     transform: scale(1.1);
 }
+
+.feature-category {
+        margin-bottom: 20px;
+        padding: 15px;
+        background: #f5f5f5;
+        border-radius: 8px;
+    }
+
+    .feature-category h4 {
+        margin: 0 0 10px 0;
+        color: var(--background-color);
+        text-transform: capitalize;
+    }
+
+    #createStatus {
+        display: inline-block;
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    #createStatus.success {
+        color: green;
+    }
+
+    #createStatus.error {
+        color: red;
+    }
+
+    .success-message {
+        color: green;
+        font-weight: bold;
+        padding: 10px;
+        background: #e8f5e9;
+        border-radius: 4px;
+        margin: 10px 0;
+    }
