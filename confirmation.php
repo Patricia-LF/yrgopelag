@@ -13,7 +13,7 @@ $statement = $database->prepare("
     SELECT 
         b.*,
         r.type as room_type,
-        r.base_price as room_price,
+        r.price as room_price,
         u.name as guest_name
     FROM bookings b
     JOIN rooms r ON b.room_id = r.id

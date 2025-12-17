@@ -62,6 +62,7 @@ $statement = $database->prepare("
         (arrival >= ? AND departure <= ?)
     )
 ");
+
 $statement->execute([$roomId, $arrival, $arrival, $departure, $departure, $arrival, $departure]);
 $result = $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -85,7 +86,7 @@ $selectedFeatures = [];
 if (!empty($features)) {
     $placeholders = str_repeat('?,', count($features) - 1) . '?';
     $statement = $database->prepare("SELECT id, name, price FROM features WHERE id IN ($placeholders)");
-    $stmt->execute($features);
+    $statement->execute($features);
     $selectedFeatures = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     foreach ($selectedFeatures as $feature) {
@@ -170,7 +171,7 @@ if (empty($errors)) {
         }
 
         // Skapa bokning
-        $stmt = $database->prepare("
+        $statement = $database->prepare("
             INSERT INTO bookings (room_id, user_id, arrival, departure, nights, total_price, status)
             VALUES (?, ?, ?, ?, ?, ?, 'confirmed')
         ");
