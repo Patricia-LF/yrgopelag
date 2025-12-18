@@ -30,3 +30,11 @@ loadEnv(__DIR__ . '/.env');
 
 // Nu kan du använda API-nyckeln
 define('API_KEY', $_ENV['API_KEY']);
+
+try {
+    $database = new PDO('sqlite:' . __DIR__ . '/yrgopelag.db');
+    $database->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $database->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+} catch (PDOException $e) {
+    die('Database connection failed: ' . $e->getMessage());
+}

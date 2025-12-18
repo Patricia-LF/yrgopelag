@@ -163,7 +163,7 @@ if (empty($errors)) {
         $user = $statement->fetch(PDO::FETCH_ASSOC);
 
         if (!$user) {
-            $statement = $database->prepare("INSERT INTO users (name) VALUES (?, '')");
+            $statement = $database->prepare("INSERT INTO users (name) VALUES (?)");
             $statement->execute([$name]);
             $userId = $database->lastInsertId();
         } else {
@@ -232,7 +232,7 @@ if (!empty($errors)) {
         echo "<li>" . htmlspecialchars($error) . "</li>";
     }
     echo "</ul>";
-    echo "<a href='index.php' class='back-link'>Go back to booking form</a>";
+    echo "<a href='booking-page.php' class='back-link'>Go back to booking form</a>";
     echo "</div>";
 }
 

@@ -43,7 +43,7 @@ require __DIR__ . '/header.php';
 
 <article class="room-container">
     <div>
-        <img src="images/Gemini_Generated_Image_chpf31chpf31chpf(1).png">
+        <img src="images/room3.png">
     </div>
 
     <div>
@@ -64,7 +64,7 @@ require __DIR__ . '/header.php';
 
 <article class="room-container">
     <div>
-        <img src="images/Gemini_Generated_Image_chpf31chpf31chpf(1).png">
+        <img src="images/Standard.png">
     </div>
 
     <div>

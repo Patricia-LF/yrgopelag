@@ -371,6 +371,18 @@ body {
     background: #d6caa5;
 } */
 
+.errors {
+    height: 800px;
+    color: var(--box-color);
+    text-align: center;
+    margin: 20px;
+}
+
+.back-link {
+    color: var(--buttons);
+    font-weight: 500;
+}
+
 footer {
     display: flex;
     flex-direction: column;
