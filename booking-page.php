@@ -71,7 +71,7 @@ function isWeekend($day)
         <h2>Book a room</h2>
 
         <div>
-            <label for="name" class="user">Name:</label>
+            <label for="name" class="user">Name (User ID):</label>
             <input type="text" name="name" id="name" placeholder="Enter your name" required>
         </div>
 
