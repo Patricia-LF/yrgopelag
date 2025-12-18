@@ -5,6 +5,10 @@ header {
     background-color: #171B1E;
 }
 
+header a {
+    text-decoration: none;
+}
+
 header h1 {
     margin: 10px;
     padding: 20px;

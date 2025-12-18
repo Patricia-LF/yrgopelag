@@ -29,7 +29,9 @@ require __DIR__ . '/config.php';
 <body>
 
     <header>
-        <h1>Infinity Hotel</h1>
+        <a href="/index.php">
+            <h1>Infinity Hotel</h1>
+        </a>
         <img src="images/infinity-logo.png" alt="Infinity logo">
     </header>
 

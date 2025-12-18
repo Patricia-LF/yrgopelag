@@ -56,50 +56,51 @@ foreach ($features as $feature) {
     <?php endforeach; ?>
 </article>
 
-<section>
-    <?php foreach ($rooms as $room): ?>
-        <article class="room-container">
-
-            <div>
-                <?= ucfirst($room['type']) ?> - $<?= $room['price'] ?>/night
-            </div>
-        </article>
-    <?php endforeach; ?>
-    <div>
-        <img src="images/room3.png">
-    </div>
-
+<section class="rooms">
+    <h2>Our rooms</h2>
     <article class="room-container">
-
-        <div>
+        <div class="room-about">
             <img src="images/room3.png">
         </div>
-        <div>
-            <p>Economy</p>
-            <p>2c/night</p>
+        <div class="room-info">
+            <div>
+                <p class="room-type1">Economy</p>
+                <p class="room-descripiton">The economy room includes a</p>
+                <p class="room-price">$4/night</p>
+            </div>
+
+            <a href="/booking-page.php" class="room-button">Book</a>
         </div>
     </article>
 
     <article class="room-container">
-        <div>
+        <div class="room-about">
             <img src="images/Standard.png">
         </div>
 
-        <div>
-            <p>Standard</p>
-            <p>5c/night</p>
+        <div class="room-info">
+            <div>
+                <p class="room-type1">Standard</p>
+                <p class="room-descripiton">Our standard room include a queen size bed,
+                <p class="room-price">$7/night</p>
+            </div>
+
+            <a href="/booking-page.php" class="room-button">Book</a>
         </div>
     </article>
 
     <article class="room-container">
-        <div>
+        <div class="room-about">
             <img src="images/Gemini_Generated_Image_chpf31chpf31chpf(1).png">
         </div>
-
         <div class="room-info">
-            <p class="room-type">Luxury</p>
-            <p class="room-descripiton">Our Luxury suite includes a king size bed, a private pool and free access to all features in the economy tier </p>
-            <p class="room-price">7c/night</p>
+            <div>
+                <p class="room-type1">Luxury</p>
+                <p class="room-descripiton">Our Luxury suite includes a king size bed, a private pool and free access to all features in the economy tier </p>
+                <p class="room-price">$10/night</p>
+            </div>
+
+            <a href="/booking-page.php" class="room-button">Book</a>
         </div>
     </article>
 </section>
