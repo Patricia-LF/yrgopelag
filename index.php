@@ -2,6 +2,33 @@
 
 require __DIR__ . '/header.php';
 
+$database = new PDO('sqlite:yrgopelag.db');
+
+// Hämta rum
+$statement = $database->query("SELECT id, type, price FROM rooms ORDER BY price");
+$rooms = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+// Hämta features
+$statement = $database->query("SELECT id, activity, tier, name, price FROM features WHERE is_active = 1 ORDER BY activity, price");
+$features = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+// Gruppera features
+$featuresByActivity = [];
+foreach ($features as $feature) {
+    $featuresByActivity[$feature['activity']][] = $feature;
+}
+
+// Skapa prisdata för JavaScript
+$roomPrices = [];
+foreach ($rooms as $room) {
+    $roomPrices[$room['id']] = (int)$room['price'];
+}
+
+$featurePrices = [];
+foreach ($features as $feature) {
+    $featurePrices[$feature['id']] = (int)$feature['price'];
+}
+
 ?>
 
 <div class="carousel-container" id="carousel">
@@ -12,98 +39,70 @@ require __DIR__ . '/header.php';
     <p>Infinity hotel is located on the beautiful Isla Syntax. </p>
 </article>
 
-<section class="features-container">
+<article class="features-container">
     <p>Features:</p>
-    <ul>
-        <li>Ping-pong table</li>
-        <li>Pool</li>
-        <li>Casino</li>
-        <li>Good book</li>
-    </ul>
-</section>
-
-<article class="booking-dates">
-    <div class="check-in-container">
-        <p>Check-in date:</p>
-        <div class="check-in-date">
-            <input type="date" name="check-in" class="check-in" min="2026-01-01" max="2026-01-31">
+    <?php foreach ($featuresByActivity as $activity => $activityFeatures): ?>
+        <div class="feature-category">
+            <h4><?= ucfirst(str_replace('-', ' ', htmlspecialchars($activity))) ?></h4>
+            <ul>
+                <?php foreach ($activityFeatures as $feature): ?>
+                    <li><?= ucfirst(htmlspecialchars($feature['name'])) ?>:
+                        <?= ucfirst(htmlspecialchars($feature['tier'])) ?>,
+                        <span class="price">($<?= $feature['price'] ?>)</span>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
         </div>
-    </div>
-
-    <img src="images/Arrow 1.png">
-
-    <div class="check-out-container">
-        <p>Check-out date:</p>
-        <div class="check-out-date">
-            <p>Monday, jan 10</p>
-            <img src="images/calendar-icon.png">
-        </div>
-    </div>
+    <?php endforeach; ?>
 </article>
 
-<article class="room-container">
+<section>
+    <?php foreach ($rooms as $room): ?>
+        <article class="room-container">
+
+            <div>
+                <?= ucfirst($room['type']) ?> - $<?= $room['price'] ?>/night
+            </div>
+        </article>
+    <?php endforeach; ?>
     <div>
         <img src="images/room3.png">
     </div>
 
-    <div>
-        <p>Economy</p>
-        <p>2c/night</p>
-    </div>
-    <div class="calendar-container">
-        <h2>January 2026</h2>
-        <section class="calendar">
-            <?php
-            for ($i = 1; $i <= 31; $i++) :
-            ?>
-                <div class="day"><?= $i; ?></div>
-            <?php endfor; ?>
-        </section>
-    </div>
-</article>
+    <article class="room-container">
 
-<article class="room-container">
-    <div>
-        <img src="images/Standard.png">
-    </div>
+        <div>
+            <img src="images/room3.png">
+        </div>
+        <div>
+            <p>Economy</p>
+            <p>2c/night</p>
+        </div>
+    </article>
 
-    <div>
-        <p>Standard</p>
-        <p>5c/night</p>
-    </div>
-    <div class="calendar-container">
-        <h2>January 2026</h2>
-        <section class="calendar">
-            <?php
-            for ($i = 1; $i <= 31; $i++) :
-            ?>
-                <div class="day"><?= $i; ?></div>
-            <?php endfor; ?>
-        </section>
-    </div>
-</article>
+    <article class="room-container">
+        <div>
+            <img src="images/Standard.png">
+        </div>
 
-<article class="room-container">
-    <div>
-        <img src="images/Gemini_Generated_Image_chpf31chpf31chpf(1).png">
-    </div>
+        <div>
+            <p>Standard</p>
+            <p>5c/night</p>
+        </div>
+    </article>
 
-    <div class="room-info">
-        <p class="room-type">Luxury</p>
-        <p class="room-descripiton">Our Luxury suite includes a king size bed, a private pool and free access to all features in the economy tier </p>
-        <p class="room-price">7c/night</p>
-    </div>
-    <div class="calendar-container">
-        <h2>January 2026</h2>
-        <section class="calendar">
-            <?php
-            for ($i = 1; $i <= 31; $i++) :
-            ?>
-                <div class="day"><?= $i; ?></div>
-            <?php endfor; ?>
-        </section>
-    </div>
-</article>
+    <article class="room-container">
+        <div>
+            <img src="images/Gemini_Generated_Image_chpf31chpf31chpf(1).png">
+        </div>
+
+        <div class="room-info">
+            <p class="room-type">Luxury</p>
+            <p class="room-descripiton">Our Luxury suite includes a king size bed, a private pool and free access to all features in the economy tier </p>
+            <p class="room-price">7c/night</p>
+        </div>
+    </article>
+</section>
 
 <?php
 require __DIR__ . '/footer.php';

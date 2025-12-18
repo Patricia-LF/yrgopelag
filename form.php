@@ -7,7 +7,7 @@ require __DIR__ . '/header.php';
 // Hotellägarinfo - centralbank )
 define('HOTEL_OWNER_USER', 'Patricia ');
 define('HOTEL_OWNER_API_KEY', $_ENV['API_KEY']);
-define('ISLAND_ID', 10); // Din island ID från centralbanken
+/* define('ISLAND_ID', 10); // Din island ID från centralbanken */
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: index.php');
@@ -194,12 +194,14 @@ if (empty($errors)) {
         $receiptData = json_encode([
             'user' => HOTEL_OWNER_USER,
             'api_key' => HOTEL_OWNER_API_KEY,
-            'island_id' => ISLAND_ID,
             'guest_name' => $name,
             'arrival_date' => $arrival,
             'departure_date' => $departure,
             'features_used' => $featuresUsed,
             'star_rating' => 5
+
+            /*  "user": "hotelOwner",
+            "api_key": "ownerApiKey", */
         ]);
 
         $context = stream_context_create([
@@ -224,16 +226,19 @@ if (empty($errors)) {
 }
 
 // Visa fel
-if (!empty($errors)) {
-    echo "<div class='errors'>";
-    echo "<h2>Booking Failed</h2>";
-    echo "<ul>";
-    foreach ($errors as $error) {
-        echo "<li>" . htmlspecialchars($error) . "</li>";
-    }
-    echo "</ul>";
-    echo "<a href='booking-page.php' class='back-link'>Go back to booking form</a>";
-    echo "</div>";
+if (!empty($errors)) { ?>
+    <div class='errors'>
+        <h2>Booking Failed</h2>
+        <ul>
+            <?php
+            foreach ($errors as $error) { ?>
+                <li>" . htmlspecialchars($error) . "</li>
+            <?php
+            } ?>
+        </ul>
+        <a href='booking-page.php' class='back-link'>Go back to booking form</a>
+    </div>
+<?php
 }
 
 require __DIR__ . '/footer.php';
