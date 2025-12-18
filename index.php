@@ -69,7 +69,7 @@ foreach ($features as $feature) {
                 <p class="room-price">$4/night</p>
             </div>
 
-            <a href="/booking-page.php" class="room-button">Book</a>
+            <a href="booking-page.php" class="room-button">Book</a>
         </div>
     </article>
 
@@ -85,7 +85,7 @@ foreach ($features as $feature) {
                 <p class="room-price">$7/night</p>
             </div>
 
-            <a href="/booking-page.php" class="room-button">Book</a>
+            <a href="booking-page.php" class="room-button">Book</a>
         </div>
     </article>
 
@@ -100,7 +100,7 @@ foreach ($features as $feature) {
                 <p class="room-price">$10/night</p>
             </div>
 
-            <a href="/booking-page.php" class="room-button">Book</a>
+            <a href="booking-page.php" class="room-button">Book</a>
         </div>
     </article>
 </section>
