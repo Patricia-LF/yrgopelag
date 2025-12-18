@@ -4,6 +4,7 @@ form {
     margin: 20px;
     padding: 10px;
     width: 50%;
+    border-radius: 0.8rem;
 }
 
 form h2 {
@@ -26,6 +27,10 @@ form h2 {
     font-size: 1rem;
     line-height: 1.5rem;
     --tw-shadow: 0 0 #0000;
+}
+
+#room {
+    cursor: pointer;
 }
 
 textarea, select {
@@ -120,12 +125,12 @@ input {
 .code-button {
     background: var(--buttons);
     color: var(--box-color);
-    padding: 5px 10px;
+    padding: 10px;
     border: none;
     border-radius: 0.8rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     text-decoration: none;
-    margin: 5px;
+    margin: 0px 5px 20px;
 }
 
 .code-button:hover {
@@ -139,9 +144,10 @@ input {
     padding: 10px;
     border: none;
     border-radius: 0.8rem;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
+    font-weight: bolder;
     text-decoration: none;
-    margin: 5px;
+    margin: 5px 0px 20px;
     width: 300px;
     display: flex;
     justify-content: center;
@@ -188,4 +194,16 @@ input {
         background: #e8f5e9;
         border-radius: 4px;
         margin: 10px 0;
+    }
+
+    .transfer-section h3 {
+        margin: 5px;
+    }
+
+    .username, .api-key {
+        margin: 5px;
+    }
+
+    #transferForm p {
+        margin: 0px 5px 10px;
     }

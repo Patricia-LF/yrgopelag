@@ -64,18 +64,15 @@ function isWeekend($day)
 }
 ?>
 
-<link rel="stylesheet" href="/calendar.css">
+<!-- <link rel="stylesheet" href="/calendar.css"> -->
 
-<!-- Main container med flex layout -->
 <div class="booking-layout">
-    <!-- Vänster sida: Formulär -->
-
     <form action="form.php" method="post">
         <h2>Book a room</h2>
 
         <div>
             <label for="name" class="user">Name:</label>
-            <input type="text" name="name" id="name" placeholder="Jennifer" required>
+            <input type="text" name="name" id="name" placeholder="Enter your name" required>
         </div>
 
         <div>
@@ -112,8 +109,8 @@ function isWeekend($day)
                             <label class="feature">
                                 <input class="f feature-checkbox" type="checkbox" name="features[]"
                                     value="<?= $feature['id'] ?>">
-                                <strong><?= ucfirst(htmlspecialchars($feature['tier'])) ?>:</strong>
-                                <?= htmlspecialchars($feature['name']) ?>
+                                <strong><?= ucfirst(htmlspecialchars($feature['name'])) ?>: </strong>
+                                <?= ucfirst(htmlspecialchars($feature['tier'])) ?>,
                                 <span class="price">($<?= $feature['price'] ?>)</span>
                             </label>
                         <?php endforeach; ?>
@@ -133,10 +130,10 @@ function isWeekend($day)
                 <p>Create a transfer code to pay <strong>$<span id="paymentAmount">0</span></strong>:</p>
 
                 <label for="username" class="username">Your Username (Centralbank)</label>
-                <input type="text" id="username" placeholder="Your name" required>
+                <input type="text" id="username" placeholder="Enter your name" required>
 
                 <label for="api_key" class="api-key">Your API Key</label>
-                <input type="password" id="api_key" placeholder="Your API key" required>
+                <input type="password" id="api_key" placeholder="Enter your API key" required>
 
                 <button type="button" id="createTransferBtn" class="code-button">
                     Create Transfer Code
@@ -212,15 +209,15 @@ function isWeekend($day)
             <h3>Legend</h3>
             <div class="legend-items">
                 <div class="legend-item">
-                    <div class="legend-box available"></div>
+                    <div class="legend-box available">A</div>
                     <span>Available</span>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-box booked"></div>
+                    <div class="legend-box booked">B</div>
                     <span>Booked</span>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-box weekend"></div>
+                    <div class="legend-box weekend">W</div>
                     <span>Weekend</span>
                 </div>
             </div>

@@ -6,7 +6,7 @@
     aspect-ratio: 1 / 1;
     height: 300px;
     justify-content: center;
-    background: var(--buttons);
+    background: var(--box-color);
 }
 
 .calendar-container h2 {
@@ -59,19 +59,19 @@
     cursor: default;
 }
 
-.day.empty:hover {
+/* .day.empty:hover {
     background: transparent;
     transform: none;
-}
+} */
 
-.day:hover {
+/* .day:hover {
     background: #eaeaea;
     transform: scale(1.05);
-}
+} */
 
 /* Helger */
 .day.weekend {
-    background: #fbe9e7;
+    background: #f4f4f4;
     color: #b71c1c;
     font-weight: 500;
 }
@@ -83,24 +83,24 @@
     font-weight: 600;
 }
 
-.day.booked:hover {
+/* .day.booked:hover {
     background: #ffab91;
-}
+} */
 
 /* Lediga datum */
 .day:not(.booked):not(.weekend):not(.empty) {
-    background: #e8f5e9;
-    color: #2e7d32;
+    background: #f4f4f4;
+    color: #29343D;
 }
 
-.day:not(.booked):not(.weekend):not(.empty):hover {
+/* .day:not(.booked):not(.weekend):not(.empty):hover {
     background: #c8e6c9;
-}
+} */
 
 .booking-layout {
     display: flex;
-    gap: 40px;
-    max-width: 1400px;
+    gap: 30px;
+    max-width: 90%;
     margin: 20px auto;
     padding: 0 20px;
     align-items: flex-start;
@@ -110,7 +110,6 @@
 .calendars-section {
     flex: 1;
     min-width: 0;
-    background: var(--box-color);
     margin-top: 20px;
 }
 
@@ -127,4 +126,44 @@
     flex-direction: column;
     gap: 20px;
     align-items: center;
+}
+
+.legend-container {
+    background: var(--box-color);
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    border-radius: 0.8rem;
+    padding: 10px 20px;
+    margin: 20px;
+}
+
+.legend-item {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 5px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.legend-box.available {
+    background: #f4f4f4;
+    color: #29343D;
+    width: 20px;
+    height: 20px;
+}
+
+.legend-box.booked {
+    background: #ffccbc;
+    border-color: #ff5722;
+    color: #d84315;
+    width: 20px;
+    height: 20px;
+}
+
+.legend-box.weekend {
+    background: #f4f4f4;
+    color: #b71c1c;
+    width: 20px;
+    height: 20px;
 }

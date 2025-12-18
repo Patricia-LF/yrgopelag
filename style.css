@@ -347,10 +347,10 @@ body {
   cursor: pointer;
 }
 
-.day:hover {
+/* .day:hover {
   background: #eaeaea;
   transform: scale(1.05);
-}
+} */
 
 /* Weekends */
 .weekend {
@@ -367,9 +367,9 @@ body {
   font-weight: 600;
 }
 
-.booked:hover {
+/* .booked:hover {
     background: #d6caa5;
-}
+} */
 
 footer {
     display: flex;
