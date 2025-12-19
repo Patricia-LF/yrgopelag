@@ -85,7 +85,7 @@ $totalPrice = $room['price'] * $nights;
 $selectedFeatures = [];
 if (!empty($features)) {
     $placeholders = str_repeat('?,', count($features) - 1) . '?';
-    $statement = $database->prepare("SELECT id, name, price FROM features WHERE id IN ($placeholders)");
+    $statement = $database->prepare("SELECT id, name, price, activity, tier FROM features WHERE id IN ($placeholders)");
     $statement->execute($features);
     $selectedFeatures = $statement->fetchAll(PDO::FETCH_ASSOC);
 
@@ -189,7 +189,18 @@ if (empty($errors)) {
         $database->commit();
 
         // Steg 4: Skicka receipt till centralbanken (för analytics/points)
-        $featuresUsed = array_column($selectedFeatures, 'name');
+        // Hämta star rating från databasen
+        $statement = $database->query("SELECT value FROM settings WHERE key = 'star_rating'");
+        $starRating = $statement->fetch()['value'] ?? '5';
+
+        // Formatera features enligt nya formatet
+        $featuresUsed = [];
+        foreach ($selectedFeatures as $feature) {
+            $featuresUsed[] = [
+                'activity' => $feature['activity'],
+                'tier' => $feature['tier']
+            ];
+        }
 
         $receiptData = json_encode([
             'user' => HOTEL_OWNER_USER,
@@ -198,10 +209,7 @@ if (empty($errors)) {
             'arrival_date' => $arrival,
             'departure_date' => $departure,
             'features_used' => $featuresUsed,
-            'star_rating' => 5
-
-            /*  "user": "hotelOwner",
-            "api_key": "ownerApiKey", */
+            'star_rating' => (int)$starRating
         ]);
 
         $context = stream_context_create([
@@ -230,15 +238,12 @@ if (!empty($errors)) { ?>
     <div class='errors'>
         <h2>Booking Failed</h2>
         <ul>
-            <?php
-            foreach ($errors as $error) { ?>
-                <li>" . htmlspecialchars($error) . "</li>
-            <?php
-            } ?>
+            <?php foreach ($errors as $error) { ?>
+                <li><?= htmlspecialchars($error) ?></li>
+            <?php } ?>
         </ul>
         <a href='booking-page.php' class='back-link'>Go back to booking form</a>
     </div>
-<?php
-}
+<?php }
 
 require __DIR__ . '/footer.php';
