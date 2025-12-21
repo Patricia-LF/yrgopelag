@@ -1,6 +1,8 @@
 :root {
-    --background-color: #29343D;
-    --box-color: #E7E4E0;
+    --background-color:#e7e4e0;
+    --box-color: #fff;
+    --nav-color: #f5f3ee;
+    --font-color: #29343D;
     --buttons: #B99235;
     --font-base: "Montserrat", sans-serif;
 }
@@ -15,6 +17,10 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     overflow-x: hidden;
     background-color: var(--background-color);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .carousel-container {
@@ -137,7 +143,7 @@ body {
 
 .dot-indicators {
     position: absolute;
-    bottom: 2rem;
+    bottom: 4rem;
     left: 0;
     right: 0;
     z-index: 10;
@@ -186,98 +192,137 @@ body {
     }
 }
 
-.about-container {
-    background-color: var(--box-color);
+.nav-bar {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    z-index: 1;
+    margin-top: -25px;
+    }
+
+.navbar-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--font-color);
+    padding: 11px var(--space-32) 13px;
+    font-size: 1rem;
+    text-decoration: none;
     color: var(--background-color);
-    font-family: var(--font-base);
+    height: 60px;
+    width: 200px;
+    text-transform: uppercase;
+}
+
+.navbar-button:hover {
+    background: #171B1E;
+}
+
+.about-rooms-container {
+    display: flex;
+    margin: 40px;
+    gap: 20px;
+}
+
+.about-features-container {
+    width: 50%;
+    background: var(--box-color);
     padding: 20px;
+    /* height: 80%; */
+}
+
+.about-container {
+    color: var(--font-color);
+    font-family: var(--font-base);
+    /* padding: 20px; */
+    height: 1000px;
+}
+
+.about-container h1 {
+    color: var(--font-color);
+    font-size: 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.about-container p {
+    margin-top: 40px;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.info, .amenities {
+    padding: 20px 40px;
+    margin-top: 10px;
+    background: var(--background-color);
+}
+
+.info h2, .amenities h2 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.info li, .amenities li {
+    font-size: 0.8rem;
 }
 
 .features-container {
-    background-color: var(--box-color);
-    color: var(--background-color);
+    background-color: var(--background-color);
+    color: var(--font-color);
     font-family: var(--font-base);
-    border-radius: 25px;
-    width: 40%;
+    /* border-radius: 25px; */
+    /* width: 40%; */
     display: flex;
     flex-direction: column;
     justify-self: center;
     padding: 20px 40px;
-    margin: 40px;
+    /* margin: 40px; */
     flex-direction: column;
     gap: 10px;
 }
 
 .features-container p {
-    color: var(--background-color);
+    color: var(--font-color);
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-.booking-dates {
-    display: flex;
-    justify-content: center;
-    width: 60%;
-    padding: 10px;
-    background: var(--box-color);
-    border-radius: 25px;
-    margin: 20px;
-    justify-self: center;
-}
-
-.booking-dates p {
-    padding: 5px;
+.features-img-container {
     display: flex;
     flex-direction: column;
-    font-size: 1.2rem;
-}
-
-.booking-dates img {
-    height: 50px;
-    width: 150px;
-    display: flex;
-    align-self: center;
-    aspect-ratio: 1/1;
-    padding: 20px;
-    border-radius: 25px;
-}
-
-.check-in, .check-out-date {
-    display: flex;
-    gap: 10px;
     align-items: center;
-    cursor: pointer;
-    border: none;
-    background: var(--box-color);
 }
 
-.check-in-date p, .check-out-date p {
-    font-size: 1rem;
-    font-weight: 300;
+.images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 20px;
 }
 
-.check-in-date img, .check-out-date img {
-    height: 20px;
-    width: 20px;
-    padding: 0px;
-    border-radius: 0;
-}
-
-.check-in-date img:hover, .check-out-date img:hover {
-    box-shadow: 0px 0px 10px var(--buttons);
-    transform: scale(1.1);
+.images img {
+    aspect-ratio: 1/1;
+    height: 200px;
 }
 
 section.rooms h2 {
     text-align: center;
-    color: var(--box-color);
+    color: var(--font-color);
     font-size: 2rem;
+    font-weight: 500;
+}
+
+.rooms {
+    width: 50%;
 }
 
 .room-container {
     background: var(--box-color);
-    border-radius: 25px;
-    width: 80%;
+    /* border-radius: 25px; */
+    /* width: 80%; */
     display: flex;
     /* flex-direction: column; */
     margin: 20px;
@@ -289,8 +334,8 @@ section.rooms h2 {
 
 .room-container img {
     aspect-ratio: 1/1;
-    width: 300px;
-    border-radius: 25px;
+    height: 200px;
+    /* border-radius: 25px; */
 }
 
 .room-about {
@@ -298,20 +343,20 @@ section.rooms h2 {
     justify-self: center;
     /* padding: 20px; */
     justify-content: flex-start;
-    gap: 40px;
+    gap: 20px;
 }
 
 .room-info {
     display: flex;
     flex-direction: column;
-    gap: 100px;
+    gap: 40px;
     text-align: left;
     /* justify-content: space-between; */
 }
 
 .room-type1 {
     padding-top: 20px;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 500;
 }
 
@@ -321,18 +366,19 @@ section.rooms h2 {
 }
 
 .room-price {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: 10px;
 }
 
 .room-button {
     display: flex;
     justify-content: center;
     background: var(--buttons);
-    color: var(--box-color);
+    color: var(--background-color);
     padding: 10px;
     border: none;
-    border-radius: 0.8rem;
+    /* border-radius: 0.8rem; */
     font-size: 1rem;
     text-decoration: none;
     margin: 0px 0px 0px 150px;
