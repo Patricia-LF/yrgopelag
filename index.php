@@ -40,7 +40,9 @@ foreach ($features as $feature) {
     <a href="#rooms" class="navbar-button">Our rooms</a>
     <a href="booking-page.php" class="navbar-button">Book</a>
     <a href="#features-container" class="navbar-button">Features</a>
-    <a href="#images" class="navbar-button">Images</a>
+    <div class="image-container">
+        <a href="javascript:void(0)" onclick="openImageOverlay()" class="navbar-button">Images</a>
+    </div>
 </div>
 
 <div class="about-rooms-container">
@@ -52,7 +54,7 @@ foreach ($features as $feature) {
             <div class="info">
                 <h2>Info:</h2>
                 <ul>
-                    <li>Reastaurant</li>
+                    <li>Restaurant</li>
                     <li>Gym</li>
                     <li>Beach 50m</li>
                     <li>Shopping 1km</li>
@@ -86,16 +88,13 @@ foreach ($features as $feature) {
                     </div>
                 <?php endforeach; ?>
             </article>
-
-            <article class="images" id="images">
-                <img src="images/unnamed (3).jpg" alt="spa">
-                <img src="images/Gemini_Generated_Image_chpf31chpf31chpf(3).png" alt="spa">
-                <img src="images/unnamed (4).jpg" alt="private beach">
-                <img src="images/Beach22.jpg" alt="private beach">
-                <img src="images/pool.jpg" alt="pool">
-                <img src="images/unnamed (1).jpg" alt="breakfast buffet">
-            </article>
         </section>
+
+        <div id="image-overlay" class="image-overlay">
+            <img src="images/close-icon.png" alt="Close" class="overlay-close-icon" onclick="closeImageOverlay()">
+            <div id="image-carousel" class="image-carousel-container"></div>
+        </div>
+
     </div>
 
     <section class="rooms" id="rooms">
@@ -153,3 +152,4 @@ require __DIR__ . '/footer.php';
 ?>
 
 <script src="carousel.js"></script>
+<script src="image-overlay.js"></script>
