@@ -300,6 +300,17 @@ html {
     font-weight: 500;
 }
 
+.feature-category ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature-category li {
+    display: flex;
+    gap: 10px;
+}
+
 .features-img-container {
     display: flex;
     flex-direction: column;

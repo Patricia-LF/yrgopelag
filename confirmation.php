@@ -65,7 +65,9 @@ $features = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="detail-section">
             <h3>Room</h3>
             <p><strong><?= ucfirst(htmlspecialchars($booking['room_type'])) ?> Room</strong></p>
-            <p>$<?= $booking['room_price'] ?> per night × <?= $booking['nights'] ?> nights = $<?= $booking['room_price'] * $booking['nights'] ?></p>
+            <p>$<?= $booking['room_price'] ?> per night × <?= $booking['nights'] ?> nights =
+                <span class="room-total">$<?= $booking['room_price'] * $booking['nights'] ?></span>
+            </p>
         </div>
 
         <?php if (!empty($features)): ?>
