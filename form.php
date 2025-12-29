@@ -1,13 +1,17 @@
 <?php
 
 declare(strict_types=1);
-require __DIR__ . '/config.php';
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+/* require __DIR__ . '/config.php'; */
 require __DIR__ . '/header.php';
 
 // Hotellägarinfo - centralbank )
 define('HOTEL_OWNER_USER', 'Patricia ');
 define('HOTEL_OWNER_API_KEY', $_ENV['API_KEY']);
-/* define('ISLAND_ID', 10); // Din island ID från centralbanken */
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: index.php');

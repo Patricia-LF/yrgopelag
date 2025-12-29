@@ -1,8 +1,6 @@
 <?php
 require __DIR__ . '/header.php';
 
-$database = new PDO('sqlite:yrgopelag.db');
-
 // Hämta rum
 $statement = $database->query("SELECT id, type, price FROM rooms ORDER BY price");
 $rooms = $statement->fetchAll(PDO::FETCH_ASSOC);

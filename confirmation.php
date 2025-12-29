@@ -11,14 +11,14 @@ if (!$bookingId) {
 // Hämta bokningsdetaljer
 $statement = $database->prepare("
     SELECT 
-        b.*,
-        r.type as room_type,
-        r.price as room_price,
-        u.name as guest_name
-    FROM bookings b
-    JOIN rooms r ON b.room_id = r.id
-    JOIN users u ON b.user_id = u.id
-    WHERE b.id = ?
+        bookings.*,
+        rooms.type as room_type,
+        rooms.price as room_price,
+        users.name as guest_name
+    FROM bookings
+    JOIN rooms ON bookings.room_id = rooms.id
+    JOIN users ON bookings.user_id = users.id
+    WHERE bookings.id = ?
 ");
 $statement->execute([$bookingId]);
 $booking = $statement->fetch(PDO::FETCH_ASSOC);
@@ -31,10 +31,10 @@ if (!$booking) {
 
 // Hämta features för bokningen
 $statement = $database->prepare("
-    SELECT f.name, f.price, f.activity, f.tier
-    FROM booking_features bf
-    JOIN features f ON bf.feature_id = f.id
-    WHERE bf.booking_id = ?
+    SELECT features.name, features.price, features.activity, features.tier
+    FROM booking_features
+    JOIN features ON booking_features.feature_id = features.id
+    WHERE booking_features.booking_id = ?
 ");
 $statement->execute([$bookingId]);
 $features = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -98,7 +98,7 @@ $features = $statement->fetchAll(PDO::FETCH_ASSOC);
     </div>
 
     <div class="confirmation-actions">
-        <a href="index.php" class="btn btn-primary">Make Another Booking</a>
+        <a href="index.php" class="btn btn-primary">Back to start</a>
         <button onclick="window.print()" class="btn btn-secondary">Print Confirmation</button>
     </div>
 </div>
