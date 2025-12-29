@@ -54,41 +54,24 @@ foreach ($features as $feature) {
             <div class="info">
                 <h2>Info:</h2>
                 <ul>
-                    <li>Restaurant</li>
-                    <li>Gym</li>
+                    <li></li>
                     <li>Beach 50m</li>
                     <li>Shopping 1km</li>
+                    <li>Coofee maker</li>
+                    <li>Hair dryer</li>
+                    <li>Ironing board</li>
                 </ul>
             </div>
             <div class="amenities">
                 <h2>Amenities:</h2>
                 <ul>
-                    <li>Shower</li>
-                    <li>Coofee maker</li>
-                    <li>Hair fan</li>
-                    <li>Ironing board</li>
+                    <li><img src="images/restaurant (1).png">Restaurant</li>
+                    <li><img src="images/weight.webp">Gym</li>
+                    <li><img src="images/car.png">Parking</li>
+                    <li><img src="images/wine.png">Bar</li>
                 </ul>
             </div>
         </article>
-
-        <section class="features-img-container">
-            <article class="features-container" id="features-container">
-                <p>Features:</p>
-                <?php foreach ($featuresByActivity as $activity => $activityFeatures): ?>
-                    <div class="feature-category">
-                        <h4><?= ucfirst(str_replace('-', ' ', htmlspecialchars($activity))) ?></h4>
-                        <ul>
-                            <?php foreach ($activityFeatures as $feature): ?>
-                                <li><?= ucfirst(htmlspecialchars($feature['name'])) ?>:
-                                    <?= ucfirst(htmlspecialchars($feature['tier'])) ?>,
-                                    <span class="price">($<?= $feature['price'] ?>)</span>
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                <?php endforeach; ?>
-            </article>
-        </section>
 
         <div id="image-overlay" class="image-overlay">
             <img src="images/close-icon.png" alt="Close" class="overlay-close-icon" onclick="closeImageOverlay()">
@@ -144,6 +127,25 @@ foreach ($features as $feature) {
                 <a href="booking-page.php" class="room-button">Book</a>
             </div>
         </article>
+
+        <section class="features-img-container">
+            <article class="features-container" id="features-container">
+                <p>Features:</p>
+                <?php foreach ($featuresByActivity as $activity => $activityFeatures): ?>
+                    <div class="feature-category">
+                        <h4><?= ucfirst(str_replace('-', ' ', htmlspecialchars($activity))) ?></h4>
+                        <ul>
+                            <?php foreach ($activityFeatures as $feature): ?>
+                                <li><?= ucfirst(htmlspecialchars($feature['name'])) ?>:
+                                    <?= ucfirst(htmlspecialchars($feature['tier'])) ?>,
+                                    <span class="price">($<?= $feature['price'] ?>)</span>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endforeach; ?>
+            </article>
+        </section>
     </section>
 </div>
 
