@@ -50,7 +50,38 @@ foreach ($features as $feature) {
         <article class="about-container" id="about-container">
             <h1>Infinity hotel</h1>
             <div>⭐⭐⭐⭐</div>
-            <p>Infinity hotel is located on the beautiful Island Isla Syntax. Here you can enjoy breathtaking views, turqoise water and fun explorations. With our minimalistic and cozy decor and extra features like breakfast buffet, spa access, pool and a private beach our hotel lets you relax to the fullest. It's the ultimate vacation. </p>
+            <p class="welcome"> Welcome to Infinity Hotel, your exclusive retreat on the stunning island of Isla Syntax. Nestled between swaying palm trees and crystal-clear turquoise waters, our hotel offers the perfect blend of tranquility and adventure.
+            </p>
+
+            <div class="perfect-stay">
+                <h3>Choose Your Perfect Stay</h3>
+                <p>We offer three carefully designed room categories to suit every traveler:</p>
+
+                <ul>
+                    <li><strong>Economy Room – </strong>Comfortable and budget-friendly with our signature minimalistic décor</li>
+                    <li><strong>Standard Room – </strong>Enhanced space and amenities for added comfort</li>
+                    <li><strong>Luxury Room – </strong>Spacious elegance with premium touches and breathtaking views</li>
+                </ul>
+            </div>
+
+            <div class="enhance">
+                <h3>Enhance Your Experience</h3>
+                <p>Customize your stay with our optional extras:</p>
+
+                <ul>
+                    <li><strong>Breakfast Buffet – </strong>Start your day with fresh tropical fruits, local specialties, and international favorites</li>
+                    <li><strong>Pool Access – </strong>Relax by our stunning infinity pool overlooking the ocean</li>
+                    <li><strong>Private Beach – </strong>Exclusive access to pristine white sand and turquoise waters</li>
+                    <li><strong>Spa Treatments – </strong>Rejuvenating therapies inspired by island traditions</li>
+                </ul>
+            </div>
+
+            <div class="island-escape">
+                <h3>Your Island Escape</h3>
+                <p>Whether you're seeking a romantic getaway, family adventure, or peaceful retreat, Infinity Hotel invites you to create your ideal vacation on beautiful Isla Syntax. Book your room and add the extras that matter most to you.
+                </p>
+            </div>
+
             <div class="info">
                 <h2>Info:</h2>
                 <ul>
