@@ -227,10 +227,9 @@ html {
 }
 
 .about-features-container {
-    width: 50%;
+    width: 60%;
     background: var(--box-color);
     padding: 20px;
-    /* height: 80%; */
     margin-bottom: 20px;
 }
 
@@ -238,7 +237,7 @@ html {
     color: var(--font-color);
     font-family: var(--font-base);
     /* padding: 20px; */
-    height: 1500px;
+    height: 90%;
 }
 
 .about-container h1 {
@@ -262,7 +261,11 @@ html {
     line-height: 1.5rem;
 }
 
-.perfect-stay p, .enhance p, .island-escape p {
+.hotel-list li {
+    display: flex;
+}
+
+.perfect-stay p, .complimentary p .enhance p, .island-escape p {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5rem;
@@ -281,6 +284,46 @@ html {
     line-height: 1.5rem;
 }
 
+.amenities-section, .location-section, .room-features-section {
+    background: var(--background-color);;
+    padding: 40px 20px;
+    margin: 30px 0;
+}
+
+.amenities-section h2, .location-section h2, .room-features-section h2 {
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    color: var(--font-color);
+    font-family: var(--font-base);
+    font-weight: 400;
+}
+
+.amenities-grid, .location-grid, .room-features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+}
+
+.amenity-item, .location-item, .room-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.amenity-item img, .location-item img, .room-feature-item img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.amenity-item span, .location-item span, .room-feature-item span {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--font-color);
+    font-family: var(--font-base);
+}
 .info, .amenities {
     padding: 20px 40px;
     margin-top: 10px;
@@ -341,7 +384,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
+    margin: 40px 0px;
 }
 
 section.rooms h2 {
@@ -349,6 +392,7 @@ section.rooms h2 {
     color: var(--font-color);
     font-size: 2rem;
     font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .rooms {
@@ -358,7 +402,7 @@ section.rooms h2 {
 .room-container {
     background: var(--box-color);
     display: flex;
-    margin: 20px;
+    margin-bottom: 20px;
     justify-self: center;
     padding: 20px;
     justify-content: flex-start;

@@ -24,6 +24,18 @@ const overlayImages = [
         image: 'images/unnamed (1).jpg',
         title: 'Breakfast buffet',
     },
+    {
+        image: 'images/restaurant.png',
+        title: 'Restaurant',
+    },
+    {
+        image: 'images/reataurang.png',
+        title: 'Restaurant',
+    },
+    {
+        image: 'images/beach-bar.png',
+        title: 'Beach bar',
+    },
     // Lägg till fler bilder här
 ];
 

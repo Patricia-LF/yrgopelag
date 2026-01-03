@@ -50,29 +50,53 @@ foreach ($features as $feature) {
         <article class="about-container" id="about-container">
             <h1>Infinity hotel</h1>
             <div>⭐⭐⭐⭐</div>
-            <p class="welcome"> Welcome to Infinity Hotel, your exclusive retreat on the stunning island of Isla Syntax. Nestled between swaying palm trees and crystal-clear turquoise waters, our hotel offers the perfect blend of tranquility and adventure.
+            <p class="welcome"> Welcome to Infinity Hotel, your exclusive retreat on the stunning island Isla Syntax. Nestled between swaying palm trees and crystal-clear turquoise waters, our hotel offers the perfect blend of tranquility and adventure. Here, personalized service is offered along with customizable experiences to create your perfect island getaway.
             </p>
+
+            <div class="hotel-list">
+                <ul>
+                    <li>✓ 4-STAR HOTEL</li>
+                    <li>✓ THREE ROOM CATEGORIES</li>
+                    <li>✓ BEACHFRONT LOCATION</li>
+                    <li>✓ COMPLIMENTARY FACILITIES</li>
+                    <li>✓ OPTIONAL ISLAND EXPERIENCES</li>
+                    <li>✓ ECO-CERTIFIED</li>
+                </ul>
+            </div>
 
             <div class="perfect-stay">
                 <h3>Choose Your Perfect Stay</h3>
-                <p>We offer three carefully designed room categories to suit every traveler:</p>
+                <p>At Infinity Hotel, we believe in giving you the freedom to design your perfect vacation. We offer three carefully designed room categories to suit every traveler:</p>
 
                 <ul>
                     <li><strong>Economy Room – </strong>Comfortable and budget-friendly with our signature minimalistic décor</li>
                     <li><strong>Standard Room – </strong>Enhanced space and amenities for added comfort</li>
-                    <li><strong>Luxury Room – </strong>Spacious elegance with premium touches and breathtaking views</li>
+                    <li><strong>Luxury Room – </strong>Spacious elegance with premium touches and breathtaking ocean views</li>
                 </ul>
+
+                <p>
+                    Each room features timeless design with ultimate comfort, providing the perfect setting for relaxation after island adventures or a peaceful romantic escape.
+                </p>
+            </div>
+
+            <div class="complimentary">
+                <h3>Complimentary Hotel Facilities</h3>
+                <p>
+                    All guests have access to our beachfront restaurant serving fresh seafood and international cuisine, our tropical beach bar with sunset views, a fully equipped gym, and convenient parking.
+                </p>
             </div>
 
             <div class="enhance">
-                <h3>Enhance Your Experience</h3>
-                <p>Customize your stay with our optional extras:</p>
+                <h3>Enhance Your Island Experience</h3>
+                <p>Customize your stay with our optional features:</p>
 
                 <ul>
                     <li><strong>Breakfast Buffet – </strong>Start your day with fresh tropical fruits, local specialties, and international favorites</li>
                     <li><strong>Pool Access – </strong>Relax by our stunning infinity pool overlooking the ocean</li>
                     <li><strong>Private Beach – </strong>Exclusive access to pristine white sand and turquoise waters</li>
-                    <li><strong>Spa Treatments – </strong>Rejuvenating therapies inspired by island traditions</li>
+                    <li><strong>Spa & Wellness – </strong>Rejuvenating therapies inspired by island traditions</li>
+                    <li><strong>Island Adventures – </strong>Guided jungle hikes, snorkeling excursions, sunset boat tours, and diving trips to coral reefs</li>
+                    <li><strong>Water Sports – </strong>Kayaking, paddleboarding, and jet skiing</li>
                 </ul>
             </div>
 
@@ -82,25 +106,62 @@ foreach ($features as $feature) {
                 </p>
             </div>
 
-            <div class="info">
-                <h2>Info:</h2>
-                <ul>
-                    <li></li>
-                    <li>Beach 50m</li>
-                    <li>Shopping 1km</li>
-                    <li>Coofee maker</li>
-                    <li>Hair dryer</li>
-                    <li>Ironing board</li>
-                </ul>
+            <div class="amenities-section">
+                <h2>AMENITIES</h2>
+                <div class="amenities-grid">
+                    <div class="amenity-item">
+                        <img src="images/wine.png" alt="Bar icon">
+                        <span>BAR</span>
+                    </div>
+                    <div class="amenity-item">
+                        <img src="images/weight.webp" alt="Gym icon">
+                        <span>GYM</span>
+                    </div>
+                    <div class="amenity-item">
+                        <img src="images/car.png" alt="Parking icon">
+                        <span>PARKING</span>
+                    </div>
+                    <div class="amenity-item">
+                        <img src="images/restaurant (1).png" alt="Restaurant icon">
+                        <span>RESTAURANT</span>
+                    </div>
+                </div>
             </div>
-            <div class="amenities">
-                <h2>Amenities:</h2>
-                <ul>
-                    <li><img src="images/restaurant (1).png">Restaurant</li>
-                    <li><img src="images/weight.webp">Gym</li>
-                    <li><img src="images/car.png">Parking</li>
-                    <li><img src="images/wine.png">Bar</li>
-                </ul>
+
+            <div class="location-section">
+                <h2>LOCATION</h2>
+                <div class="location-grid">
+                    <div class="location-item">
+                        <img src="images/beach-icon.png" alt="Beach icon">
+                        <span>BEACH 50M</span>
+                    </div>
+                    <div class="location-item">
+                        <img src="images/city-icon.png" alt="City icon">
+                        <span>CITY CENTER 1KM</span>
+                    </div>
+                    <div class="location-item">
+                        <img src="images/shopping-icon.jpg" alt="Shopping icon">
+                        <span>SHOPPING 1KM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-features-section">
+                <h2>IN YOUR ROOM</h2>
+                <div class="room-features-grid">
+                    <div class="room-feature-item">
+                        <img src="images/coffee-icon.png" alt="Coffee icon">
+                        <span>COFFEE MAKER</span>
+                    </div>
+                    <div class="room-feature-item">
+                        <img src="images/hairdryer-icon.png" alt="Hair dryer icon">
+                        <span>HAIR DRYER</span>
+                    </div>
+                    <div class="room-feature-item">
+                        <img src="images/iron-icon.png" alt="Iron icon">
+                        <span>IRONING BOARD</span>
+                    </div>
+                </div>
             </div>
         </article>
 
