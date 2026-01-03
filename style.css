@@ -662,11 +662,18 @@ section.rooms h2 {
 footer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+ /* align-items: center;
+    justify-content: center; */
     background-color: #171B1E;
     height: 200px;
     gap: 10px;
+    padding: 20px;
+}
+
+footer h1 {
+    text-transform: uppercase;
+    color: var(--background-color);
+    font-family: var(--font-base);
 }
 
 footer p {

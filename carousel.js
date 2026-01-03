@@ -19,7 +19,7 @@ const slides = [{
                 subtitle: 'Spa-like bathrooms with ocean panoramas'
             },
             {
-                image: 'images/mv_conrad_rangali_infinity-pool_web.jpg',
+                image: 'images/pool2.jpg',
                 title: 'Tropical Escape',
                 subtitle: 'Unwind in paradise under swaying palms'
             },
