@@ -132,7 +132,7 @@ foreach ($features as $feature) {
                 <h2>LOCATION</h2>
                 <div class="location-grid">
                     <div class="location-item">
-                        <img src="images/beach-icon.png" alt="Beach icon">
+                        <img src="images/beach-icon2.png" alt="Beach icon">
                         <span>BEACH 50M</span>
                     </div>
                     <div class="location-item">
