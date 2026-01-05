@@ -20,9 +20,9 @@ $featureGrid = [
         'superior' => 'four-wheeled motorized beast'
     ],
     'hotel-specific' => [
-        'economy' => 'custom-1',
-        'basic' => 'good book',
-        'premium' => 'library and a fireplace',
-        'superior' => 'custom-4'
+        'economy' => 'breakfast buffet',
+        'basic' => 'bowling',
+        'premium' => 'spa access',
+        'superior' => 'private beach'
     ],
 ];

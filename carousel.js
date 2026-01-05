@@ -1,30 +1,30 @@
 const slides = [{
-                image: 'images/tropical-beach-paradise-stockcake.jpg',
+                image: 'images/tropical-beach.jpg',
                 title: 'Paradise Found',
                 subtitle: 'Escape to pristine beaches and palm trees'
             },
             {
-                image: 'images/Overwater-Villa-with-Pool-Terrace-St.-Regis-Vommuli.jpg',
+                image: 'images/features/room-pool.jpg',
                 title: 'Modern Serenity',
                 subtitle: 'Infinity pool overlooking turquoise waters'
             },
             {
-                image: 'images/Gemini_Generated_Image_s518nrs518nrs518(2).png',
+                image: 'images/rooms/luxury-room.png',
                 title: 'Zen Retreat',
                 subtitle: 'Minimalist design with breathtaking ocean views'
             },
             {
-                image: 'images/Gemini_Generated_Image_yn2h82yn2h82yn2h(1).png',
+                image: 'images/rooms/bathroom2.png',
                 title: 'Luxurious Comfort',
                 subtitle: 'Spa-like bathrooms with ocean panoramas'
             },
             {
-                image: 'images/pool2.jpg',
+                image: 'images/features/pool2.jpg',
                 title: 'Tropical Escape',
                 subtitle: 'Unwind in paradise under swaying palms'
             },
             {
-                image: 'images/photo-1507525428034-b723cf961d3e.jpeg',
+                image: 'images/evening-beach.jpeg',
                 title: 'Evening Serenity',
                 subtitle: 'Experience magical tropical sunsets'
             }

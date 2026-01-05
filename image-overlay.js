@@ -1,23 +1,23 @@
 // Bilder för overlay-karusellen
 const overlayImages = [
     {
-        image: 'images/infinity-pool.png',
+        image: 'images/features/infinity-pool.png',
         title: 'Pool',
     },
     {
-        image: 'images/pool2.jpg',
+        image: 'images/features/pool2.jpg',
         title: 'Pool',
     },
     {
-        image: 'images/unnamed (4).jpg',
+        image: 'images/features/private-beach.jpg',
         title: 'Private beach',
     },
     {
-        image: 'images/Beach2.jpg',
+        image: 'images/features/Beach2.jpg',
         title: 'Private beach',
     },
     {
-        image: 'images/private-beach3.png',
+        image: 'images/features/private-beach3.png',
         title: 'Private beach',
     },
     {
@@ -41,32 +41,44 @@ const overlayImages = [
         title: 'Beach bar',
     },
     {
-        image: "images/spa2.png",
+        image: "images/features/spa2.png",
         title: 'Spa',
     },
     {
-        image: "images/unnamed (3).jpg",
+        image: "images/features/spa.jpg",
         title: 'Spa',
     },
     {
-        image: 'images/Gemini_Generated_Image_chpf31chpf31chpf(3).png',
+        image: 'images/features/spa-evening.png',
         title: 'Spa',
     },
     {
-        image: 'images/bowling.png',
+        image: 'images/features/bowling.png',
         title: 'Bowling alley',
     },
     {
-        image: 'images/breakfast2.png',
+        image: 'images/features/breakfast2.png',
         title: 'Breakfast buffet',
     },
     {
-        image: 'images/unnamed (1).jpg',
+        image: 'images/features/breakfast.jpg',
         title: 'Breakfast buffet',
     },
     {
-        image: 'images/luxury-room.png',
+        image: 'images/rooms/luxury-room.png',
         title: 'Luxury suite',
+    },
+    {
+        image: 'images/rooms/bathroom.jpg',
+        title: 'Bathroom',
+    },
+    {
+        image: 'images/rooms/bathroom3.png',
+        title: 'Bathroom',
+    },
+    {
+        image: 'images/gym.jpg',
+        title: 'Gym',
     },
     // Lägg till fler bilder här
 ];

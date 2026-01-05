@@ -110,19 +110,19 @@ foreach ($features as $feature) {
                 <h2>AMENITIES</h2>
                 <div class="amenities-grid">
                     <div class="amenity-item">
-                        <img src="images/wine.png" alt="Bar icon">
+                        <img src="images/icons/wine.png" alt="Bar icon">
                         <span>BAR</span>
                     </div>
                     <div class="amenity-item">
-                        <img src="images/weight.webp" alt="Gym icon">
+                        <img src="images/icons/weight.webp" alt="Gym icon">
                         <span>GYM</span>
                     </div>
                     <div class="amenity-item">
-                        <img src="images/car.png" alt="Parking icon">
+                        <img src="images/icons/car.png" alt="Parking icon">
                         <span>PARKING</span>
                     </div>
                     <div class="amenity-item">
-                        <img src="images/restaurant (1).png" alt="Restaurant icon">
+                        <img src="images/icons/restaurant (1).png" alt="Restaurant icon">
                         <span>RESTAURANT</span>
                     </div>
                 </div>
@@ -132,15 +132,15 @@ foreach ($features as $feature) {
                 <h2>LOCATION</h2>
                 <div class="location-grid">
                     <div class="location-item">
-                        <img src="images/beach-icon2.png" alt="Beach icon">
+                        <img src="images/icons/beach-icon2.png" alt="Beach icon">
                         <span>BEACH 50M</span>
                     </div>
                     <div class="location-item">
-                        <img src="images/city-icon.png" alt="City icon">
+                        <img src="images/icons/city-icon.png" alt="City icon">
                         <span>CITY CENTER 1KM</span>
                     </div>
                     <div class="location-item">
-                        <img src="images/shopping-icon.jpg" alt="Shopping icon">
+                        <img src="images/icons/shopping-icon.jpg" alt="Shopping icon">
                         <span>SHOPPING 1KM</span>
                     </div>
                 </div>
@@ -150,15 +150,15 @@ foreach ($features as $feature) {
                 <h2>IN YOUR ROOM</h2>
                 <div class="room-features-grid">
                     <div class="room-feature-item">
-                        <img src="images/coffee-machine.png" alt="Coffee icon">
+                        <img src="images/icons/coffee-machine.png" alt="Coffee icon">
                         <span>COFFEE MAKER</span>
                     </div>
                     <div class="room-feature-item">
-                        <img src="images/hair-dryer.png" alt="Hair dryer icon">
+                        <img src="images/icons/hair-dryer.png" alt="Hair dryer icon">
                         <span>HAIR DRYER</span>
                     </div>
                     <div class="room-feature-item">
-                        <img src="images/ironing-board.png" alt="Iron icon">
+                        <img src="images/icons/ironing-board.png" alt="Iron icon">
                         <span>IRONING BOARD</span>
                     </div>
                 </div>
@@ -166,7 +166,7 @@ foreach ($features as $feature) {
         </article>
 
         <div id="image-overlay" class="image-overlay">
-            <img src="images/close-icon.png" alt="Close" class="overlay-close-icon" onclick="closeImageOverlay()">
+            <img src="images/icons/close-icon.png" alt="Close" class="overlay-close-icon" onclick="closeImageOverlay()">
             <div id="image-carousel" class="image-carousel-container"></div>
         </div>
 
@@ -176,7 +176,7 @@ foreach ($features as $feature) {
         <h2>Our rooms</h2>
         <article class="room-container">
             <div class="room-about">
-                <img src="images/room3.png">
+                <img src="images/rooms/budget-room1.jpg">
             </div>
             <div class="room-info">
                 <div>
@@ -191,7 +191,7 @@ foreach ($features as $feature) {
 
         <article class="room-container">
             <div class="room-about">
-                <img src="images/Standard.png">
+                <img src="images/rooms/standard-room1.jpg">
             </div>
 
             <div class="room-info">
@@ -207,7 +207,7 @@ foreach ($features as $feature) {
 
         <article class="room-container">
             <div class="room-about">
-                <img src="images/Gemini_Generated_Image_chpf31chpf31chpf(1).png">
+                <img src="images/rooms/luxury-room1.jpg">
             </div>
             <div class="room-info">
                 <div>
