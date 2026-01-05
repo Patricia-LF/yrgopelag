@@ -150,15 +150,15 @@ foreach ($features as $feature) {
                 <h2>IN YOUR ROOM</h2>
                 <div class="room-features-grid">
                     <div class="room-feature-item">
-                        <img src="images/coffee-icon.png" alt="Coffee icon">
+                        <img src="images/coffee-machine.png" alt="Coffee icon">
                         <span>COFFEE MAKER</span>
                     </div>
                     <div class="room-feature-item">
-                        <img src="images/hairdryer-icon.png" alt="Hair dryer icon">
+                        <img src="images/hair-dryer.png" alt="Hair dryer icon">
                         <span>HAIR DRYER</span>
                     </div>
                     <div class="room-feature-item">
-                        <img src="images/iron-icon.png" alt="Iron icon">
+                        <img src="images/ironing-board.png" alt="Iron icon">
                         <span>IRONING BOARD</span>
                     </div>
                 </div>

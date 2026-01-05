@@ -1,6 +1,14 @@
 // Bilder för overlay-karusellen
 const overlayImages = [
     {
+        image: 'images/infinity-pool.png',
+        title: 'Pool',
+    },
+    {
+        image: 'images/pool2.jpg',
+        title: 'Pool',
+    },
+    {
         image: 'images/unnamed (4).jpg',
         title: 'Private beach',
     },
@@ -9,16 +17,8 @@ const overlayImages = [
         title: 'Private beach',
     },
     {
-        image: 'images/pool2.jpg',
-        title: 'Pool',
-    },
-    {
-        image: 'images/breakfast2.png',
-        title: 'Breakfast buffet',
-    },
-    {
-        image: 'images/unnamed (1).jpg',
-        title: 'Breakfast buffet',
+        image: 'images/private-beach3.png',
+        title: 'Private beach',
     },
     {
         image: 'images/restaurant5.png',
@@ -41,6 +41,10 @@ const overlayImages = [
         title: 'Beach bar',
     },
     {
+        image: "images/spa2.png",
+        title: 'Spa',
+    },
+    {
         image: "images/unnamed (3).jpg",
         title: 'Spa',
     },
@@ -51,6 +55,18 @@ const overlayImages = [
     {
         image: 'images/bowling.png',
         title: 'Bowling alley',
+    },
+    {
+        image: 'images/breakfast2.png',
+        title: 'Breakfast buffet',
+    },
+    {
+        image: 'images/unnamed (1).jpg',
+        title: 'Breakfast buffet',
+    },
+    {
+        image: 'images/luxury-room.png',
+        title: 'Luxury suite',
     },
     // Lägg till fler bilder här
 ];
