@@ -9,7 +9,7 @@ $statement = $database->query("SELECT id, type, price FROM rooms ORDER BY price"
 $rooms = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 // Hämta features
-$statement = $database->query("SELECT id, activity, tier, name, price FROM features WHERE is_active = 1 ORDER BY activity, price");
+$statement = $database->query("SELECT id, activity, tier, name, price, description FROM features WHERE is_active = 1 ORDER BY activity, price");
 $features = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 // Gruppera features
@@ -32,7 +32,7 @@ foreach ($features as $feature) {
 ?>
 
 <div class="carousel-container" id="carousel">
-    <!-- Slides kommer att genereras av JavaScript -->
+    <!-- Slides från carousel.js -->
 </div>
 
 <div class="nav-bar">
@@ -90,18 +90,26 @@ foreach ($features as $feature) {
                 <h3>Enhance Your Island Experience</h3>
                 <p>Customize your stay with our optional features:</p>
 
-                <ul>
-                    <li><strong>Breakfast Buffet – </strong>Start your day with fresh tropical fruits, local specialties, and international favorites</li>
-                    <li><strong>Pool Access – </strong>Relax by our stunning infinity pool overlooking the ocean</li>
-                    <li><strong>Private Beach – </strong>Exclusive access to pristine white sand and turquoise waters</li>
-                    <li><strong>Spa & Wellness – </strong>Rejuvenating therapies inspired by island traditions</li>
-                    <li><strong>Island Adventures – </strong>Guided jungle hikes, snorkeling excursions, sunset boat tours, and diving trips to coral reefs</li>
-                    <li><strong>Water Sports – </strong>Kayaking, paddleboarding, and jet skiing</li>
-                </ul>
+                <!-- Hämtar aktiva fetures från db -->
+                <?php foreach ($featuresByActivity as $activity => $activityFeatures): ?>
+                    <div class="enhance">
+                        <ul>
+                            <?php foreach ($activityFeatures as $feature): ?>
+                                <li><strong><?= ucfirst(htmlspecialchars($feature['name'])) ?> -</strong>
+                                    <?= ucfirst(htmlspecialchars($feature['description'])) ?>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endforeach; ?>
             </div>
 
             <div class="island-escape">
                 <h3>Your Island Escape</h3>
+                <ul>
+                    <li><strong>Island Adventures – </strong>Guided jungle hikes, snorkeling excursions, sunset boat tours, and diving trips to coral reefs</li>
+                    <li><strong>Water Sports – </strong>Kayaking, paddleboarding, and jet skiing</li>
+                </ul>
                 <p>Whether you're seeking a romantic getaway, family adventure, or peaceful retreat, Infinity Hotel invites you to create your ideal vacation on beautiful Isla Syntax. Book your room and add the extras that matter most to you.
                 </p>
             </div>
@@ -181,7 +189,7 @@ foreach ($features as $feature) {
             <div class="room-info">
                 <div>
                     <p class="room-type1">Economy</p>
-                    <p class="room-descripiton">The economy room includes a</p>
+                    <p class="room-descripiton">Our economy room offers comfortable and smart accommodation, perfect for solo travelers or couples seeking quality at great value.</p>
                     <p class="room-price">$4/night</p>
                 </div>
 
@@ -191,13 +199,13 @@ foreach ($features as $feature) {
 
         <article class="room-container">
             <div class="room-about">
-                <img src="images/rooms/standard-room1.jpg">
+                <img src="images/rooms/standard6.png">
             </div>
 
             <div class="room-info">
                 <div>
                     <p class="room-type1">Standard</p>
-                    <p class="room-descripiton">Our standard room include a queen size bed,
+                    <p class="room-descripiton">Our standard room features a spacious queen size bed and thoughtfully designed interiors, providing enhanced comfort and style for a relaxing stay.
                     <p class="room-price">$7/night</p>
                 </div>
 
@@ -207,12 +215,12 @@ foreach ($features as $feature) {
 
         <article class="room-container">
             <div class="room-about">
-                <img src="images/rooms/luxury-room1.jpg">
+                <img src="images/rooms/luxury5.png">
             </div>
             <div class="room-info">
                 <div>
                     <p class="room-type1">Luxury</p>
-                    <p class="room-descripiton">Our Luxury suite includes a king size bed, a private pool and free access to all features in the economy tier </p>
+                    <p class="room-descripiton">Our luxury suite is the ultimate indulgence, featuring a king size bed, private pool, and exclusive access to all premium amenities. Experience unparalleled comfort and elegance. </p>
                     <p class="room-price">$10/night</p>
                 </div>
 
@@ -228,8 +236,8 @@ foreach ($features as $feature) {
                         <h4><?= ucfirst(str_replace('-', ' ', htmlspecialchars($activity))) ?></h4>
                         <ul>
                             <?php foreach ($activityFeatures as $feature): ?>
-                                <li><?= ucfirst(htmlspecialchars($feature['name'])) ?>:
-                                    <?= ucfirst(htmlspecialchars($feature['tier'])) ?>,
+                                <li><strong><?= ucfirst(htmlspecialchars($feature['tier'])) ?></strong>:
+                                    <?= ucfirst(htmlspecialchars($feature['name'])) ?>,
                                     <span class="price">($<?= $feature['price'] ?>)</span>
                                 </li>
                             <?php endforeach; ?>

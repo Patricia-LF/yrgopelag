@@ -59,16 +59,6 @@
     cursor: default;
 }
 
-/* .day.empty:hover {
-    background: transparent;
-    transform: none;
-} */
-
-/* .day:hover {
-    background: #eaeaea;
-    transform: scale(1.05);
-} */
-
 /* Helger */
 .day.weekend {
     background: #f4f4f4;
@@ -83,19 +73,11 @@
     font-weight: 600;
 }
 
-/* .day.booked:hover {
-    background: #ffab91;
-} */
-
 /* Lediga datum */
 .day:not(.booked):not(.weekend):not(.empty) {
     background: #f4f4f4;
     color: #29343D;
 }
-
-/* .day:not(.booked):not(.weekend):not(.empty):hover {
-    background: #c8e6c9;
-} */
 
 .booking-layout {
     display: flex;

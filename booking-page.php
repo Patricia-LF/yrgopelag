@@ -6,7 +6,7 @@ $statement = $database->query("SELECT id, type, price FROM rooms ORDER BY price"
 $rooms = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 // Hämta features
-$statement = $database->query("SELECT id, activity, tier, name, price FROM features WHERE is_active = 1 ORDER BY activity, price");
+$statement = $database->query("SELECT id, activity, tier, name, price, description FROM features WHERE is_active = 1 ORDER BY activity, price");
 $features = $statement->fetchAll(PDO::FETCH_ASSOC);
 
 // Gruppera features
@@ -107,8 +107,8 @@ function isWeekend($day)
                             <label class="feature">
                                 <input class="f feature-checkbox" type="checkbox" name="features[]"
                                     value="<?= $feature['id'] ?>">
-                                <strong><?= ucfirst(htmlspecialchars($feature['name'])) ?>: </strong>
-                                <?= ucfirst(htmlspecialchars($feature['tier'])) ?>,
+                                <strong><?= ucfirst(htmlspecialchars($feature['tier'])) ?>: </strong>&nbsp;
+                                <?= ucfirst(htmlspecialchars($feature['name'])) ?>,&nbsp;
                                 <span class="price">($<?= $feature['price'] ?>)</span>
                             </label>
                         <?php endforeach; ?>
@@ -124,19 +124,35 @@ function isWeekend($day)
         <div class="transfer-section">
             <h3>Payment</h3>
 
+            <div class="payment-method-toggle">
+                <label>
+                    <input type="radio" name="paymentMethod" value="generate" checked>
+                    Generate transfer code automatically
+                </label>
+                <label>
+                    <input type="radio" name="paymentMethod" value="manual">
+                    Enter transfer code manually
+                </label>
+            </div>
+
             <div id="transferForm">
                 <p>Create a transfer code to pay <strong>$<span id="paymentAmount">0</span></strong>:</p>
 
                 <label for="username" class="username">Your Username (Centralbank)</label>
-                <input type="text" id="username" placeholder="Enter your name" required>
+                <input type="text" id="username" placeholder="Enter your name">
 
                 <label for="api_key" class="api-key">Your API Key</label>
-                <input type="password" id="api_key" placeholder="Enter your API key" required>
+                <input type="password" id="api_key" placeholder="Enter your API key">
 
                 <button type="button" id="createTransferBtn" class="code-button">
                     Create Transfer Code
                 </button>
                 <span id="createStatus"></span>
+            </div>
+
+            <div id="manualForm" style="display: none;">
+                <p>Enter your pre-generated transfer code for <strong>$<span id="manualPaymentAmount">0</span></strong>:</p>
+                <p class="info-text">Create a transfer code in Centralbank first, then paste it here.</p>
             </div>
 
             <div id="transferResult" style="display: none;">
@@ -145,10 +161,10 @@ function isWeekend($day)
 
             <label for="transferCode" class="tr-code">Transfer Code:</label>
             <input type="text" name="transferCode" id="transferCode"
-                placeholder="Generate transfer code above" required readonly>
+                placeholder="Transfer code will appear here" required>
         </div>
 
-        <button type="submit" class="buy-button" id="submitBtn" disabled>Complete Booking</button>
+        <button type="submit" class="buy-button" id="submitBtn">Complete Booking</button>
     </form>
 
 
@@ -204,7 +220,6 @@ function isWeekend($day)
         </div>
 
         <div class="legend-container">
-            <h3>Legend</h3>
             <div class="legend-items">
                 <div class="legend-item">
                     <div class="legend-box available">A</div>
@@ -224,7 +239,6 @@ function isWeekend($day)
 </div>
 
 <script>
-    // Din befintliga JavaScript kod här...
     const roomPrices = <?= json_encode($roomPrices) ?>;
     const featurePrices = <?= json_encode($featurePrices) ?>;
 
@@ -256,9 +270,46 @@ function isWeekend($day)
         const total = roomCost + featuresCost;
         document.getElementById('totalCost').textContent = total;
         document.getElementById('paymentAmount').textContent = total;
+        document.getElementById('manualPaymentAmount').textContent = total;
 
         return total;
     }
+
+    // Hantera byte mellan automatisk och manuell transferCode
+    document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const transferForm = document.getElementById('transferForm');
+            const manualForm = document.getElementById('manualForm');
+            const transferCode = document.getElementById('transferCode');
+            const submitBtn = document.getElementById('submitBtn');
+
+            if (this.value === 'generate') {
+                transferForm.style.display = 'block';
+                manualForm.style.display = 'none';
+                transferCode.placeholder = 'Generate transfer code above';
+                transferCode.readOnly = true;
+                transferCode.value = '';
+                submitBtn.disabled = true;
+            } else {
+                transferForm.style.display = 'none';
+                manualForm.style.display = 'block';
+                transferCode.placeholder = 'Enter your transfer code here';
+                transferCode.readOnly = false;
+                transferCode.value = '';
+                submitBtn.disabled = false;
+            }
+        });
+    });
+
+    // Aktivera submit-knappen när användaren skriver in kod manuellt
+    document.getElementById('transferCode').addEventListener('input', function() {
+        const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (paymentMethod === 'manual') {
+            submitBtn.disabled = this.value.trim() === '';
+        }
+    });
 
     document.getElementById('createTransferBtn').addEventListener('click', async function() {
         const username = document.getElementById('username').value.trim();

@@ -350,43 +350,6 @@ html {
     align-items: center;
 }
 
-.features-container {
-    background-color: var(--box-color);
-    color: var(--font-color);
-    font-family: var(--font-base);
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    padding: 20px;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.features-container p {
-    color: var(--font-color);
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-
-.feature-category ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.feature-category li {
-    display: flex;
-    gap: 10px;
-}
-
-.features-img-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 40px 0px;
-}
-
 section.rooms h2 {
     text-align: center;
     color: var(--font-color);
@@ -461,6 +424,44 @@ section.rooms h2 {
 .room-button:hover {
     box-shadow: 0px 0px 20px var(--buttons);
     transform: scale(1.1);
+}
+
+.features-container {
+    background-color: var(--box-color);
+    color: var(--font-color);
+    font-family: var(--font-base);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    padding: 20px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.features-container p {
+    color: var(--font-color);
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.feature-category ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature-category li {
+    display: flex;
+    gap: 10px;
+    font-size: 0.8rem;
+}
+
+.features-img-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px 0px;
 }
 
 .image-overlay {

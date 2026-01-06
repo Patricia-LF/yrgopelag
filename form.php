@@ -192,7 +192,7 @@ if (empty($errors)) {
 
         $database->commit();
 
-        // Steg 4: Skicka receipt till centralbanken (för analytics/points)
+        // Steg 4: Skicka kvitto till centralbanken (för analytics/points)
         // Hämta star rating från databasen
         $statement = $database->query("SELECT value FROM settings WHERE key = 'star_rating'");
         $starRating = $statement->fetch()['value'] ?? '5';
@@ -225,7 +225,7 @@ if (empty($errors)) {
             ]
         ]);
 
-        // Skicka receipt (men fortsätt även om det misslyckas)
+        // Skicka kvitto (men fortsätt även om det misslyckas)
         @file_get_contents('https://www.yrgopelag.se/centralbank/receipt', false, $context);
 
         // Omdirigera till bekräftelsesida

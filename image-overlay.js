@@ -80,7 +80,6 @@ const overlayImages = [
         image: 'images/gym.jpg',
         title: 'Gym',
     },
-    // Lägg till fler bilder här
 ];
 
 class ImageOverlayCarousel {
