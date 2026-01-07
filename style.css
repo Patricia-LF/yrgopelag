@@ -589,8 +589,8 @@ section.rooms h2 {
 }
 
 footer {
-    background-color: #171B1E;
-    padding: 40px 20px 20px;
+    background-color: var(--font-color);
+    padding: 40px 0 0 0;
     color: var(--box-color);
     font-family: var(--font-base);
 }
@@ -601,7 +601,7 @@ footer {
     gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
-    padding-bottom: 20px;
+    padding: 0 20px 20px 20px;
 }
 
 .footer-section h1 {
@@ -662,10 +662,12 @@ footer {
 }
 
 .footer-bottom {
+    background: #171B1E;
     text-align: center;
-    padding-top: 20px;
+    padding: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 20px;
+    width: 100%;
 }
 
 .footer-bottom p {
