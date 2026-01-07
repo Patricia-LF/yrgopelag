@@ -232,7 +232,9 @@ if (empty($errors)) {
         header("Location: confirmation.php?booking_id=" . $bookingId);
         exit;
     } catch (Exception $e) {
-        $database->rollBack();
+        if ($database->inTransaction()) {
+            $database->rollBack();
+        }
         $errors[] = "Database error: " . $e->getMessage();
     }
 }
