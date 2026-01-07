@@ -84,10 +84,61 @@ const overlayImages = [
         image: 'images/gym1.png',
         title: 'Gym',
     },
+    
+    /*
+    //Games
+    {
+        image: 'images/features/yahtzee.jpg',
+        title: 'Yahtzee',
+    },
+    {
+        image: 'images/features/pingpong.jpg',
+        title: 'Ping pong table',
+    },
     {
         image: 'images/features/ps5.png',
         title: 'PS5',
     },
+    {
+        image: 'images/features/casino.jpg',
+        title: 'Casino',
+    },
+    
+    //Water
+    {
+        image: 'images/features/scuba-diving.jpg',
+        title: 'Scuba diving',
+    },
+    {
+        image: 'images/features/olympic-pool.jpg',
+        title: 'Olympic pool',
+    },
+    {
+        image: 'images/features/waterpark1.jpg',
+        title: 'Waterpark with fire and minibar',
+    },
+    {
+        image: 'images/features/waterpark.jpg',
+        title: 'Waterpark with fire and minibar',
+    },
+
+    //wheels
+    {
+        image: 'images/features/unicycle.jpg',
+        title: 'Unicycle',
+    },
+    {
+        image: 'images/features/bicycle.jpg',
+        title: 'Bicycle',
+    },
+    {
+        image: 'images/features/trike.jpg',
+        title: 'Trike',
+    },
+    {
+        image: 'images/features/four-wheeled-beast.jpg',
+        title: 'Four-wheeled motorized beast',
+    },*/
 ];
 
 class ImageOverlayCarousel {
