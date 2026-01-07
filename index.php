@@ -236,7 +236,7 @@ foreach ($features as $feature) {
                         <h4><?= ucfirst(str_replace('-', ' ', htmlspecialchars($activity))) ?></h4>
                         <ul>
                             <?php foreach ($activityFeatures as $feature): ?>
-                                <li><strong><?= ucfirst(htmlspecialchars($feature['tier'])) ?></strong>:
+                                <li><strong><?= ucfirst(htmlspecialchars($feature['tier'])) ?>: </strong>
                                     <?= ucfirst(htmlspecialchars($feature['name'])) ?>,
                                     <span class="price">($<?= $feature['price'] ?>)</span>
                                 </li>

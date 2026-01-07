@@ -221,6 +221,10 @@ input {
         cursor: pointer;
     }
 
+    div#manualForm {
+        margin: 20px 10px;
+    }
+
     .username, .api-key {
         margin: 5px;
     }
