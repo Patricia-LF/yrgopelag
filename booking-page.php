@@ -138,8 +138,8 @@ function isWeekend($day)
             <div id="transferForm">
                 <p>Create a transfer code to pay <strong>$<span id="paymentAmount">0</span></strong>:</p>
 
-                <label for="username" class="username">Your Username (Centralbank)</label>
-                <input type="text" id="username" placeholder="Enter your name">
+                <!-- <label for="username" class="username">Your Username (Centralbank)</label>
+                <input type="text" id="username" placeholder="Enter your name"> -->
 
                 <label for="api_key" class="api-key">Your API Key</label>
                 <input type="password" id="api_key" placeholder="Enter your API key">
@@ -312,12 +312,12 @@ function isWeekend($day)
     });
 
     document.getElementById('createTransferBtn').addEventListener('click', async function() {
-        const username = document.getElementById('username').value.trim();
+        const username = document.getElementById('name').value.trim(); // Hämta från name-fältet istället
         const apiKey = document.getElementById('api_key').value.trim();
         const amount = calculateTotal();
 
         if (!username || !apiKey) {
-            alert('Please enter your username and API key');
+            alert('Please enter your name and API key');
             return;
         }
 

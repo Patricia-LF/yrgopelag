@@ -80,6 +80,14 @@ const overlayImages = [
         image: 'images/gym.jpg',
         title: 'Gym',
     },
+    {
+        image: 'images/gym1.png',
+        title: 'Gym',
+    },
+    {
+        image: 'images/features/ps5.png',
+        title: 'PS5',
+    },
 ];
 
 class ImageOverlayCarousel {

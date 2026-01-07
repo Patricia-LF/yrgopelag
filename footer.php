@@ -26,7 +26,7 @@
             <h3>Follow Us</h3>
             <div class="social-icons">
                 <a href="#" aria-label="Instagram"><img src="images/icons/Instagram_icon.png"></a>
-                <a href="#" aria-label="Facebook"><img src="images/rooms/facebook-icon.png"></a>
+                <a href="#" aria-label="Facebook"><img src="images/icons/facebook-icon.png"></a>
                 <a href="#" aria-label="Twitter"><img src="images/icons/twitter-icon.png"></a>
             </div>
         </div>

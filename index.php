@@ -18,6 +18,10 @@ foreach ($features as $feature) {
     $featuresByActivity[$feature['activity']][] = $feature;
 }
 
+// Hämta star rating från databasen
+$statement = $database->query("SELECT value FROM settings WHERE key = 'star_rating'");
+$starRating = (int)($statement->fetch()['value'] ?? '5');
+
 // Skapa prisdata för JavaScript
 $roomPrices = [];
 foreach ($rooms as $room) {
@@ -49,13 +53,13 @@ foreach ($features as $feature) {
     <div class="about-features-container">
         <article class="about-container" id="about-container">
             <h1>Infinity hotel</h1>
-            <div>⭐⭐⭐⭐</div>
+            <div><?= str_repeat('⭐', $starRating) ?></div>
             <p class="welcome"> Welcome to Infinity Hotel, your exclusive retreat on the stunning island Isla Syntax. Nestled between swaying palm trees and crystal-clear turquoise waters, our hotel offers the perfect blend of tranquility and adventure. Here, personalized service is offered along with customizable experiences to create your perfect island getaway.
             </p>
 
             <div class="hotel-list">
                 <ul>
-                    <li>✓ 4-STAR HOTEL</li>
+                    <li>✓ <?= $starRating ?>-STAR HOTEL</li>
                     <li>✓ THREE ROOM CATEGORIES</li>
                     <li>✓ BEACHFRONT LOCATION</li>
                     <li>✓ COMPLIMENTARY FACILITIES</li>

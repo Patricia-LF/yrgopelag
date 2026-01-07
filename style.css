@@ -583,11 +583,23 @@ section.rooms h2 {
     color: var(--box-color);
     text-align: center;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.errors h2, .errors ul {
+    color: var(--font-color);
+}
+
+.errors li {
+    display: flex;
+    flex-direction: column;
 }
 
 .back-link {
     color: var(--buttons);
     font-weight: 500;
+    margin-top: 20px;
 }
 
 footer {
@@ -598,12 +610,13 @@ footer {
 }
 
 .footer-content {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(4, 1fr);
     gap: 40px;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px 20px 20px;
+    justify-content: space-around;
 }
 
 .footer-section h1 {
