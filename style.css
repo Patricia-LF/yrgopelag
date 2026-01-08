@@ -380,7 +380,6 @@ section.rooms h2 {
 }
 
 .room-type1 {
-    /* padding-top: 20px; */
     font-size: 1.5rem;
     font-weight: 500;
 }
@@ -410,7 +409,6 @@ section.rooms h2 {
     border: none;
     font-size: 1.2rem;
     text-decoration: none;
-    /* margin: 0px 0px 0px 60px; */
     width: 200px;
 }
 
