@@ -122,12 +122,12 @@ const overlayImages = [
     {
         image: 'images/features/ps5.png',
         title: 'PS5',
-    },
+    },*/
     {
         image: 'images/features/casino.jpg',
         title: 'Casino',
     },
-    
+    /*
     //Water
     {
         image: 'images/features/scuba-diving.jpg',
@@ -140,12 +140,12 @@ const overlayImages = [
     {
         image: 'images/features/waterpark1.jpg',
         title: 'Waterpark with fire and minibar',
-    },
+    },*/
     {
         image: 'images/features/waterpark.jpg',
         title: 'Waterpark with fire and minibar',
     },
-
+    /*
     //wheels
     {
         image: 'images/features/unicycle.jpg',
@@ -158,11 +158,11 @@ const overlayImages = [
     {
         image: 'images/features/trike.jpg',
         title: 'Trike',
-    },
+    },*/
     {
         image: 'images/features/four-wheeled-beast.jpg',
         title: 'Four-wheeled motorized beast',
-    },*/
+    },
 ];
 
 class ImageOverlayCarousel {
