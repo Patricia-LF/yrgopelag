@@ -23,7 +23,6 @@
     height: 40px;
     cursor: pointer;
     z-index: 1002;
-    /* filter: invert(1); */
 }
 
 .image-carousel-container {

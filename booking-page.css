@@ -85,7 +85,6 @@ input {
     font-size: 0.8rem;
 }
 
-/* Lägg till padding-right för att göra plats för pilen */
 select {
     padding-right: 40px;
 }
