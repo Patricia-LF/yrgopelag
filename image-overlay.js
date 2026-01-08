@@ -73,6 +73,10 @@ const overlayImages = [
         title: 'Beach bar',
     },
     {
+        image: 'images/ocean.png',
+        title: 'Beach bar',
+    },
+    {
         image: "images/features/spa2.png",
         title: 'Spa',
     },
