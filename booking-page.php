@@ -147,7 +147,11 @@ function isWeekend($day)
 
             <div id="manualForm" style="display: none;">
                 <p>Enter your pre-generated transfer code for <strong>$<span id="manualPaymentAmount">0</span></strong>:</p>
-                <p class="info-text">Create a transfer code in Centralbank first, then paste it here.</p>
+
+                <a href="https://www.yrgopelag.se/centralbank/" target="_blank" rel="noopener noreferrer" class="centralbank-button">
+                    Open Centralbank →
+                </a>
+                <p class="info-text">Create a transfer code in Centralbank first, then paste it here ↓</p>
             </div>
 
             <div id="transferResult" style="display: none;">
@@ -231,6 +235,8 @@ function isWeekend($day)
         </div>
     </div>
 </div>
+
+<a href="index.php" class="back-button">&lt; Back</a>
 
 <script>
     const roomPrices = <?= json_encode($roomPrices) ?>;
