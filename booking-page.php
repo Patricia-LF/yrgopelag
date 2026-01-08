@@ -68,7 +68,7 @@ function isWeekend($day)
 
         <div>
             <label for="name" class="user">Name (User ID):</label>
-            <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            <input type="text" name="name" id="name" placeholder="e.g. Rune" required>
         </div>
 
         <div>
@@ -85,7 +85,7 @@ function isWeekend($day)
 
         <div class="select-wrapper">
             <select name="room" id="room" class="form-input-room" required>
-                <option value="">Select room</option>
+                <option value="">--Select room--</option>
                 <?php foreach ($rooms as $room): ?>
                     <option value="<?= $room['id'] ?>">
                         <?= ucfirst(htmlspecialchars($room['type'])) ?> - $<?= $room['price'] ?>/night
