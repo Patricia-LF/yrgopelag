@@ -100,36 +100,7 @@ if (!empty($features)) {
     }
 }
 
-// Steg 1: Validera transferCode med centralbanken
-if (empty($errors)) {
-    $validateData = json_encode([
-        'transferCode' => $transferCode,
-        'totalCost' => $totalPrice
-    ]);
-
-    $context = stream_context_create([
-        'http' => [
-            'method' => 'POST',
-            'header' => "Content-Type: application/json\r\n",
-            'content' => $validateData,
-            'ignore_errors' => true
-        ]
-    ]);
-
-    $validateResponse = @file_get_contents('https://www.yrgopelag.se/centralbank/transferCode', false, $context);
-
-    if ($validateResponse === false) {
-        $errors[] = "Could not connect to payment service";
-    } else {
-        $validateResult = json_decode($validateResponse, true);
-
-        if (!$validateResult || $validateResult['status'] !== 'success') {
-            $errors[] = "Invalid transfer code or insufficient amount: " . ($validateResult['error'] ?? 'Unknown error');
-        }
-    }
-}
-
-// Steg 2: Deposit (konsumera transferCode och ta emot betalningen)
+// Deposit (konsumera transferCode och ta emot betalningen)
 if (empty($errors)) {
     $depositData = json_encode([
         'user' => HOTEL_OWNER_USER,
@@ -141,19 +112,24 @@ if (empty($errors)) {
             'method' => 'POST',
             'header' => "Content-Type: application/json\r\n",
             'content' => $depositData,
-            'ignore_errors' => true
+            'ignore_errors' => true,
+            'timeout' => 10
         ]
     ]);
 
     $depositResponse = @file_get_contents('https://www.yrgopelag.se/centralbank/deposit', false, $context);
 
     if ($depositResponse === false) {
-        $errors[] = "Payment processing failed - could not connect";
+        $error = error_get_last();
+        error_log("Deposit failed: " . print_r($error, true));
+        error_log("Sent data: " . $depositData);
+        $errors[] = "Payment processing failed - could not connect to payment service";
     } else {
+        error_log("Deposit response: " . $depositResponse);
         $depositResult = json_decode($depositResponse, true);
 
-        if (!$depositResult || $depositResult['status'] !== 'success') {
-            $errors[] = "Payment failed: " . ($depositResult['error'] ?? 'Unknown error');
+        if (!$depositResult || !isset($depositResult['status']) || $depositResult['status'] !== 'success') {
+            $errors[] = "Payment failed: " . ($depositResult['error'] ?? 'Invalid transfer code or insufficient funds');
         }
     }
 }
