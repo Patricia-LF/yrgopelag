@@ -189,7 +189,7 @@ foreach ($features as $feature) {
         <article class="room-container">
             <div class="room-img-about">
                 <div class="room-about">
-                    <img src="images/rooms/budget-room1.jpg">
+                    <img src="images/rooms/economy8.png">
                 </div>
 
                 <div class="room-info">
@@ -207,7 +207,7 @@ foreach ($features as $feature) {
         <article class="room-container">
             <div class="room-img-about">
                 <div class="room-about">
-                    <img src="images/rooms/standard6.png">
+                    <img src="images/rooms/standard8.png">
                 </div>
 
                 <div class="room-info">

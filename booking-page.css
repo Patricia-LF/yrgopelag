@@ -244,23 +244,10 @@ div#manualForm {
 }
 
 .back-button {
-    position: absolute;
-    right: 3%;
-    transform: translateY(-150%);
-    background: #171b1e;
-    border: none;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
     cursor: pointer;
-    transition: background 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
     text-decoration: none;
-}
-
-.back-button:hover {
-    background: #29343d;
+    margin-bottom: 20px;
 }

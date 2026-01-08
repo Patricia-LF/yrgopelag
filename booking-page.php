@@ -236,7 +236,9 @@ function isWeekend($day)
     </div>
 </div>
 
-<a href="index.php" class="back-button">&lt; Back</a>
+<div class="back-button">
+    <a href="index.php" class="btn btn-primary">Back to start</a>
+</div>
 
 <script>
     const roomPrices = <?= json_encode($roomPrices) ?>;

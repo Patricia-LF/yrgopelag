@@ -1,6 +1,38 @@
 // Bilder för overlay-karusellen
 const overlayImages = [
     {
+        image: 'images/rooms/luxury-room.png',
+        title: 'Luxury suite',
+    },
+    {
+        image: 'images/rooms/luxury8.png',
+        title: 'Luxury suite',
+    },
+    {
+        image: 'images/rooms/standard8.png',
+        title: 'Standard room',
+    },
+    {
+        image: 'images/rooms/standard5.png',
+        title: 'Standard room',
+    },
+    {
+        image: 'images/rooms/economy8.png',
+        title: 'Economy room',
+    },
+    {
+        image: 'images/rooms/economy9.jpg',
+        title: 'Economy room',
+    },
+    {
+        image: 'images/rooms/bathroom.jpg',
+        title: 'Bathroom',
+    },
+    {
+        image: 'images/rooms/bathroom3.png',
+        title: 'Bathroom',
+    },
+    {
         image: 'images/features/infinity-pool.png',
         title: 'Pool',
     },
@@ -63,18 +95,6 @@ const overlayImages = [
     {
         image: 'images/features/breakfast.jpg',
         title: 'Breakfast buffet',
-    },
-    {
-        image: 'images/rooms/luxury-room.png',
-        title: 'Luxury suite',
-    },
-    {
-        image: 'images/rooms/bathroom.jpg',
-        title: 'Bathroom',
-    },
-    {
-        image: 'images/rooms/bathroom3.png',
-        title: 'Bathroom',
     },
     {
         image: 'images/gym.jpg',
