@@ -100,7 +100,7 @@ if (!empty($features)) {
     }
 }
 
-// Deposit (konsumera transferCode och ta emot betalningen)
+// Steg 1-2: Deposit (konsumera transferCode och ta emot betalningen)
 if (empty($errors)) {
     $depositData = json_encode([
         'user' => HOTEL_OWNER_USER,
