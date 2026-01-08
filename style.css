@@ -351,7 +351,8 @@ section.rooms h2 {
     justify-self: center;
     padding: 20px;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 30px;
+    flex-direction: column;
 }
 
 .room-container img {
@@ -366,15 +367,20 @@ section.rooms h2 {
     gap: 20px;
 }
 
+.room-img-about {
+    display: flex;
+    gap: 30px;
+}
+
 .room-info {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 10px;
     text-align: left;
 }
 
 .room-type1 {
-    padding-top: 20px;
+    /* padding-top: 20px; */
     font-size: 1.5rem;
     font-weight: 500;
 }
@@ -390,6 +396,11 @@ section.rooms h2 {
     margin-top: 10px;
 }
 
+.book-button {
+    display: flex;
+    justify-content: center;
+}
+
 .room-button {
     display: flex;
     justify-content: center;
@@ -397,10 +408,10 @@ section.rooms h2 {
     color: var(--background-color);
     padding: 10px;
     border: none;
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-decoration: none;
-    margin: 0px 0px 0px 150px;
-    width: 150px;
+    /* margin: 0px 0px 0px 60px; */
+    width: 200px;
 }
 
 .room-button:hover {

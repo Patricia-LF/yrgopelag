@@ -187,47 +187,53 @@ foreach ($features as $feature) {
     <section class="rooms" id="rooms">
         <h2>Our rooms</h2>
         <article class="room-container">
-            <div class="room-about">
-                <img src="images/rooms/budget-room1.jpg">
-            </div>
-            <div class="room-info">
-                <div>
+            <div class="room-img-about">
+                <div class="room-about">
+                    <img src="images/rooms/budget-room1.jpg">
+                </div>
+
+                <div class="room-info">
                     <p class="room-type1">Economy</p>
                     <p class="room-descripiton">Our economy room offers comfortable and smart accommodation, perfect for solo travelers or couples seeking quality at great value.</p>
                     <p class="room-price">$4/night</p>
                 </div>
+            </div>
 
+            <div class="book-button">
                 <a href="booking-page.php" class="room-button">Book</a>
             </div>
         </article>
 
         <article class="room-container">
-            <div class="room-about">
-                <img src="images/rooms/standard6.png">
-            </div>
+            <div class="room-img-about">
+                <div class="room-about">
+                    <img src="images/rooms/standard6.png">
+                </div>
 
-            <div class="room-info">
-                <div>
+                <div class="room-info">
                     <p class="room-type1">Standard</p>
                     <p class="room-descripiton">Our standard room features a spacious queen size bed and thoughtfully designed interiors, providing enhanced comfort and style for a relaxing stay.
                     <p class="room-price">$7/night</p>
                 </div>
-
+            </div>
+            <div class="book-button">
                 <a href="booking-page.php" class="room-button">Book</a>
             </div>
         </article>
 
         <article class="room-container">
-            <div class="room-about">
-                <img src="images/rooms/luxury5.png">
-            </div>
-            <div class="room-info">
-                <div>
+            <div class="room-img-about">
+                <div class="room-about">
+                    <img src="images/rooms/luxury5.png">
+                </div>
+
+                <div class="room-info">
                     <p class="room-type1">Luxury</p>
                     <p class="room-descripiton">Our luxury suite is the ultimate indulgence, featuring a king size bed, private pool, and exclusive access to all premium amenities. Experience unparalleled comfort and elegance. </p>
                     <p class="room-price">$10/night</p>
                 </div>
-
+            </div>
+            <div class="book-button">
                 <a href="booking-page.php" class="room-button">Book</a>
             </div>
         </article>
