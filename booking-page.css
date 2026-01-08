@@ -84,22 +84,9 @@ input {
     margin: 0;
 }
 
- /* .feature {
-        display: block;
-        padding: 8px;
-        margin: 5px 0;
-        background: white;
-        border-radius: 4px;
-    } */
-
-    .feature:hover {
-        background: #e8f4f8;
-    }
-
-    /* .price {
-        color: #0066cc;
-        font-weight: bold;
-    } */
+.feature:hover {
+    background: #e8f4f8;
+}
 
 .f {
     width: 40px;
@@ -163,72 +150,71 @@ input {
 }
 
 .feature-category {
-        /* margin-bottom: 20px; */
-        padding: 15px;
-        border-radius: 8px;
-    }
+    padding: 15px;
+    border-radius: 8px;
+}
 
-    .feature-category h4 {
-        margin: 0 0 10px 0;
-        color: var(--font-color);
-        text-transform: capitalize;
-    }
+.feature-category h4 {
+    margin: 0 0 10px 0;
+    color: var(--font-color);
+    text-transform: capitalize;
+}
 
-    #createStatus {
-        display: inline-block;
-        margin-left: 10px;
-        font-size: 14px;
-    }
+#createStatus {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 14px;
+}
 
-    #createStatus.success {
-        color: green;
-    }
+#createStatus.success {
+    color: green;
+}
 
-    #createStatus.error {
-        color: red;
-    }
+#createStatus.error {
+    color: red;
+}
 
-    .success-message {
-        color: green;
-        font-weight: bold;
-        padding: 10px;
-        background: #e8f5e9;
-        border-radius: 4px;
-        margin: 10px 0;
-    }
+.success-message {
+    color: green;
+    font-weight: bold;
+    padding: 10px;
+    background: #e8f5e9;
+    border-radius: 4px;
+    margin: 10px 0;
+}
 
-    .transfer-section h3 {
-        margin: 5px;
-    }
+.transfer-section h3 {
+    margin: 5px;
+}
 
-    .payment-method-toggle {
-        display: flex;
-        padding: 10px;
-        margin-bottom: 10px;
-        border: solid var(--font-color);
-    }
+.payment-method-toggle {
+    display: flex;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: solid var(--font-color);
+}
 
-    .payment-method-toggle label {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-        align-items: baseline;
-    }
+.payment-method-toggle label {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: baseline;
+}
 
-    .payment-method-toggle label input {
-        width: 50%;
-        margin: 0;
-        cursor: pointer;
-    }
+.payment-method-toggle label input {
+    width: 50%;
+    margin: 0;
+    cursor: pointer;
+}
 
-    div#manualForm {
-        margin: 20px 10px;
-    }
+div#manualForm {
+    margin: 20px 10px;
+}
 
-    .username, .api-key {
-        margin: 5px;
-    }
+.username, .api-key {
+    margin: 5px;
+}
 
-    #transferForm p {
-        margin: 0px 5px 10px;
-    }
+#transferForm p {
+    margin: 0px 5px 10px;
+}

@@ -28,7 +28,7 @@ function loadEnv($path)
 // Ladda .env-filen
 loadEnv(__DIR__ . '/.env');
 
-// Nu kan du använda API-nyckeln
+// Nu kan man använda API-nyckeln
 define('API_KEY', $_ENV['API_KEY']);
 
 try {

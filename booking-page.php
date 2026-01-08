@@ -62,8 +62,6 @@ function isWeekend($day)
 }
 ?>
 
-<!-- <link rel="stylesheet" href="/calendar.css"> -->
-
 <div class="booking-layout">
     <form action="form.php" method="post">
         <h2>Book a room</h2>
@@ -76,18 +74,18 @@ function isWeekend($day)
         <div>
             <label for="arrival" class="arrival">Arrival:</label>
             <input type="date" name="arrival" id="arrival" class="form-input"
-                min="2026-01-01" max="2026-01-31" required>
+                min="2026-01-01" max="2026-01-30" required>
         </div>
 
         <div>
             <label for="departure" class="departure">Departure:</label>
             <input type="date" name="departure" id="departure" class="form-input"
-                min="2026-01-01" max="2026-01-31" required>
+                min="2026-01-02" max="2026-01-31" required>
         </div>
 
         <div>
             <label for="room" class="room-type">Room</label>
-            <select name="room" id="room" class="form-input pr-12" required>
+            <select name="room" id="room" class="form-input-room" required>
                 <option value="">Select room</option>
                 <?php foreach ($rooms as $room): ?>
                     <option value="<?= $room['id'] ?>">
@@ -138,9 +136,6 @@ function isWeekend($day)
             <div id="transferForm">
                 <p>Create a transfer code to pay <strong>$<span id="paymentAmount">0</span></strong>:</p>
 
-                <!-- <label for="username" class="username">Your Username (Centralbank)</label>
-                <input type="text" id="username" placeholder="Enter your name"> -->
-
                 <label for="api_key" class="api-key">Your API Key</label>
                 <input type="password" id="api_key" placeholder="Enter your API key">
 
@@ -168,7 +163,7 @@ function isWeekend($day)
     </form>
 
 
-    <!-- Höger sida: Kalendrar -->
+    <!--Kalendrar -->
     <div class="calendars-section">
         <h2 class="calendars-title">Room Availability</h2>
 
@@ -191,9 +186,8 @@ function isWeekend($day)
 
                     <section class="calendar">
                         <?php
-                        // Hitta vilken veckodag 1 januari 2026 är (1=måndag, 7=söndag)
                         $firstDay = new DateTime('2026-01-01');
-                        $dayOfWeek = (int)$firstDay->format('N'); // 1-7
+                        $dayOfWeek = (int)$firstDay->format('N');
 
                         // Lägg till tomma rutor för dagar före 1:a
                         for ($i = 1; $i < $dayOfWeek; $i++) {
@@ -275,6 +269,22 @@ function isWeekend($day)
         return total;
     }
 
+    document.getElementById('arrival').addEventListener('change', function() {
+        const arrivalDate = this.value;
+        const departureInput = document.getElementById('departure');
+
+        if (arrivalDate) {
+            const minDepartureDate = new Date(arrivalDate);
+            minDepartureDate.setDate(minDepartureDate.getDate() + 1);
+            const minDate = minDepartureDate.toISOString().split('T')[0];
+            departureInput.setAttribute('min', minDate);
+
+            if (departureInput.value && departureInput.value <= arrivalDate) {
+                departureInput.value = '';
+            }
+        }
+    });
+
     // Hantera byte mellan automatisk och manuell transferCode
     document.querySelectorAll('input[name="paymentMethod"]').forEach(radio => {
         radio.addEventListener('change', function() {
@@ -312,7 +322,7 @@ function isWeekend($day)
     });
 
     document.getElementById('createTransferBtn').addEventListener('click', async function() {
-        const username = document.getElementById('name').value.trim(); // Hämta från name-fältet istället
+        const username = document.getElementById('name').value.trim(); // Hämta från name-fältet
         const apiKey = document.getElementById('api_key').value.trim();
         const amount = calculateTotal();
 
