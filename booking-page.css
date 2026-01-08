@@ -67,6 +67,29 @@ input {
     margin: 10px;
 }
 
+/* Wrapper för select med pil */
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    position: absolute;
+    right: 15px;
+    top: 35%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #2f241b;
+    font-size: 0.8rem;
+}
+
+/* Lägg till padding-right för att göra plats för pilen */
+select {
+    padding-right: 40px;
+}
+
 .features-cont {
     background-color: #fff;
     width: 100%;

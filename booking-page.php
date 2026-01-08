@@ -83,8 +83,7 @@ function isWeekend($day)
                 min="2026-01-02" max="2026-01-31" required>
         </div>
 
-        <div>
-            <label for="room" class="room-type">Room</label>
+        <div class="select-wrapper">
             <select name="room" id="room" class="form-input-room" required>
                 <option value="">Select room</option>
                 <?php foreach ($rooms as $room): ?>
