@@ -29,6 +29,10 @@
                 <a href="#" aria-label="Facebook"><img src="images/icons/facebook-icon.png"></a>
                 <a href="#" aria-label="Twitter"><img src="images/icons/twitter-icon.png"></a>
             </div>
+
+            <div class="admin-link">
+                <a href="admin.php">Admin page</a>
+            </div>
         </div>
     </div>
 
