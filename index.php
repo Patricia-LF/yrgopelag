@@ -263,5 +263,5 @@ foreach ($features as $feature) {
 require __DIR__ . '/footer.php';
 ?>
 
-<script src="carousel.js"></script>
-<script src="image-overlay.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/image-overlay.js"></script>
