@@ -1,9 +1,11 @@
-Yrgopelago is an assignment in programming/PHP and data sources, for the education Web developing at YRGO higher education.
+## Yrgopelag - Infinity Hotel
 
-We were supposed to create a website for a hotel. The hotels 3 rooms should be able to be booked, and payed with credits. SQLite was used to store and handle the data from users, rooms, features and bookings.
-Yrgopelago is an assignment in programming/PHP and data sources, for the education Web developing at YRGO higher education.
+Yrgopelago is a hotel booking system built with PHP and SQLite, featuring room availability, bookings, add-ons and a credit-based payment system.
 
-We were supposed to create a website for a hotel. The hotels 3 rooms should be able to be booked, and payed with credits. SQLite was used to store and handle the data from users, rooms, features and bookings.
+        SQLite was used to design the full database structure for users, rooms, bookings and add-ons. The application also contain booking logic, including availability checks and validation. There is also an admin page where prices and features can be managed.
+
+        Note:
+        Yrgopelago was an assignment in programming/PHP and data sources, for the education Web development at YRGO higher education. The site was not optimized for mobile, as it was not a requirement for the assignment. This is something that I have addressed later on.
 
 ## Code review
 
