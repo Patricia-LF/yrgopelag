@@ -105,8 +105,10 @@ function isWeekend($day)
                                 <input class="f feature-checkbox" type="checkbox" name="features[]"
                                     value="<?= $feature['id'] ?>">
                                 <strong><?= ucfirst(htmlspecialchars($feature['tier'])) ?>: </strong>&nbsp;
-                                <?= ucfirst(htmlspecialchars($feature['name'])) ?>,&nbsp;
-                                <span class="price">($<?= $feature['price'] ?>)</span>
+                                <div class="f-end">
+                                    <?= ucfirst(htmlspecialchars($feature['name'])) ?>,&nbsp;
+                                    <span class="price">($<?= $feature['price'] ?>)</span>
+                                </div>
                             </label>
                         <?php endforeach; ?>
                     </div>

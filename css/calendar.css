@@ -99,7 +99,7 @@
 
 .calendars-title {
   text-align: center;
-  color: var(--background-color);
+  color: var(--font-color);
   font-size: 1.8rem;
   margin-bottom: 20px;
 }
@@ -153,4 +153,13 @@
 }
 
 @media (max-width: 768px) {
+  .booking-layout {
+    flex-direction: column-reverse;
+    padding: 0px;
+  }
+
+  .calendars-section {
+    align-self: center;
+    margin-top: 0px;
+  }
 }

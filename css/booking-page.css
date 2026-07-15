@@ -285,4 +285,27 @@ div#manualForm {
 }
 
 @media (max-width: 768px) {
+  form {
+    margin: 0px;
+    width: 100%;
+  }
+
+  .features-cont {
+    padding: 0px;
+  }
+
+  .feature-category {
+    width: 100%;
+    padding-left: 10px;
+  }
+
+  .f-end {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .f {
+    width: 30px;
+  }
 }
