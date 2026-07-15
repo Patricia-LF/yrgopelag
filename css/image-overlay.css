@@ -129,4 +129,21 @@
 }
 
 @media (max-width: 768px) {
+  .overlay-nav-button {
+    top: 95%;
+  }
+
+  .image-carousel-container {
+    height: 60vh;
+  }
+
+  .overlay-slide-content {
+    top: -20px;
+  }
+
+  .overlay-dot-indicators {
+    bottom: -60px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
